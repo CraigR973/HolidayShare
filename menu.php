@@ -9,6 +9,6 @@
         <link rel="apple-touch-icon" href="docs/logo.png">
     </head>
     <body>
-        <h1>Holiday Share</h1>
+        <h1>Menu goes here</h1> 
     </body>
 </html>
