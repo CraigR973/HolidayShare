@@ -7,6 +7,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="icon" sizes="276x299" href="docs/logo.png">
         <link rel="apple-touch-icon" href="docs/logo.png">
+        <link rel="stylesheet" type="text/css" href="holiday.css">
         <script>
             function checkForm(){
                 var errs = "";
