@@ -8,6 +8,18 @@ and open the template in the editor.
     Author     : Blair Ramsay
 */
 
+h1{
+    text-align: center;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    letter-spacing: 3px;
+    color: #878e8e;
+}
+
+body {
+    background-color : #f4fbfb;
+}
+
+
  /* The side navigation menu */
             .sidenav {
                 height: 100%; /* 100% Full-height */

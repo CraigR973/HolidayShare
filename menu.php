@@ -25,7 +25,7 @@
     </head>
     <body>
         
-            <span onclick="openNav()"><img src="docs/menu.png"></span>
+        <span onclick="openNav()"><img src="docs/menu.png"></span><h1>Home</h1>
             <br><br>
             <div class="buttons">
                 <a href="find.php"><input type="submit" value="Find" id="buttons"></a>
@@ -34,6 +34,7 @@
         
         <div id="mySidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Close</a>
+          <a href="menu.php">Home</a>
           <a href="profile.php">Profile</a>
           <a href="requests.php">Requests</a>
           <a href="About.php">About</a>
