@@ -22,7 +22,6 @@
     </head>
     <body>
         <span onclick="openNav()"><img src="docs/menu.png"></span><h1>Share</h1> 
-            <br><br>
         
         <div id="mySidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Close</a>
@@ -31,5 +30,26 @@
           <a href="About.php">About</a>
           <a href="login.php">Log Out</a>
         </div>
+            
+        <form method="post" name="myform">
+            
+            <p class="login">
+                Item Name <input type="text" name="username" id="username" placeholder="Name"><br><br>
+                Item Type:<br><br>
+                <select id="type" name="type">
+                    <option value="suitcase">Suitcase</option>
+                    <option value="Accessory">Accessory</option>
+                    <option value="1">...</option>
+                    <option value="2">...</option>
+                </select>
+                <br><br>
+                Item Description:<br><br>
+                <textarea placeholder="Description..."></textarea>
+                <br><br>
+                <input type="submit" value="Post" name="Post" id="login">
+            </p>
+            
+        </form>
+            
     </body>
 </html>

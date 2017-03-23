@@ -65,11 +65,9 @@
                         $_SESSION['username'] = $loginusername;
                         header('Location: menu.php');
                     }
-                    else{
-                        echo "Incorrect Usrename or Password";
-                    }
                     
                 }
+                echo "<p>Incorrect Username or Password.Please Re-enter</p>";
             }
             }
             

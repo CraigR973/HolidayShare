@@ -25,11 +25,12 @@
         <span onclick="openNav()"><img src="docs/menu.png"></span><h1>About</h1> 
             <br><br>
         
-            <p>Holiday Share is a sharing community allowing users to connect and share their holiday items that would otherwise gather dust for most of the year</p>
-            <p>To request to borrow an item, select the "Find" option on th main menu and search for the item you're looking for</p>
-            <p>To share an item, select the "Share" option on th main menu and make a post displaying the item you want to share</p>
+            <p>Holiday Share is a sharing community allowing users to connect and share their holiday items that would otherwise gather dust for most of the year.</p>
+            <p>To request to borrow an item, select the "Find" option on the main menu and search for the item you're looking for.</p>
+            <p>To share an item, select the "Share" option on the main menu and make a post displaying the item you want to share.</p>
             <br>
             <p>Happy Sharing!</p>
+            <br>
             
         <div id="mySidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Close</a>
