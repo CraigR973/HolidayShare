@@ -13,39 +13,25 @@
                 var errs = "";
                 var enteredusername = document.forms["myform"]["newusername"];
                 var entereduserpassword = document.forms["myform"]["newpassword"];
-                var enteredname = document.forms["myform"]["newname"];
-                var enteredage = document.forms["myform"]["newage"];
         
                 enteredusername.style.background = "white";
                 entereduserpassword.style.background = "white";
-                enteredname.style.background = "white";
-                enteredname.style.background = "white";
                 
-                if((enteredusername.value===null) || (enteredusername.value==="")){
+                if((enteredusername.value==null) || (enteredusername.value=="")){
                     errs+="   * Username must not be empty\n";
                     enteredusername.style.background = "pink";
                 }
                 
-                if((entereduserpassword.value===null) || (entereduserpassword.value==="")){
+                if((entereduserpassword.value==null) || (entereduserpassword.value=="")){
                     errs+="   * Password must not be empty\n";
                     entereduserpassword.style.background = "pink";
                 }
                 
-                if((enteredname.value===null) || (enteredname.value==="")){
-                    errs+="   * Name must not be empty\n";
-                    enteredname.style.background = "pink";
-                }
-                
-                if((enteredage.value===null) || (enteredage.value==="")){
-                    errs+="   * Age must not be empty\n";
-                    enteredage.style.background = "pink";
-                }
-                
-                if(errs!===""){
+                if(errs!==""){
                     alert(errs);
                 }
                 
-                return (errs="");
+                return (errs=="");
                 
             }
             
