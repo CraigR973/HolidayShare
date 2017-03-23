@@ -45,7 +45,7 @@
                     alert(errs);
                 }
                 
-                return (errs=="");
+                return (errs="");
                 
             }
             

@@ -1,5 +1,7 @@
 TO-DO
 
+Moved the requests into the profile page cause there's noting really on there
+
 Pages:
 
 CreateAccount 

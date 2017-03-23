@@ -28,7 +28,6 @@
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Close</a>
           <a href="menu.php">Home</a>
           <a href="profile.php">Profile</a>
-          <a href="requests.php">Requests</a>
           <a href="About.php">About</a>
           <a href="login.php">Log Out</a>
         </div>
