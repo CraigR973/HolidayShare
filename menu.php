@@ -29,6 +29,7 @@
             <br><br>
             <div class="buttons">
                 <a href="find.php"><input type="submit" value="Find" id="buttons"></a>
+                <br><br><br>
                 <a href="share.php"><input type="submit" value="Share" id="buttons"></a>
             </div>
         

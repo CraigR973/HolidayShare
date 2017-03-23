@@ -19,6 +19,20 @@ body {
     background-color : #f4fbfb;
 }
 
+.buttons{
+    text-align: center;
+}
+
+#buttons{
+    background-color: #65e1e1;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+}
 
  /* The side navigation menu */
             .sidenav {
