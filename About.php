@@ -37,7 +37,7 @@
           <a href="profile.php">Profile</a>
           <a href="requests.php">Requests</a>
           <a href="About.php">About</a>
-          <a>Log Out</a>
+          <a href="login.php">Log Out</a>
         </div>
     </body>
 </html>

@@ -1,5 +1,6 @@
 <html>
     <head>
+    <br>
         <title>Holiday Share</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,19 +12,20 @@
     </head>
     <body>
         <h1>Holiday Share</h1>
-        
+        <br><br><br>
         <form method="post" name="myform">
             
             <p class="login">
-            Enter Username <input type="text" name="username"><br>
-            Enter Password <input type="password" name="password"><br>
-            <input type="submit" value="Login" name="Login">
+                Username <input type="text" name="username" id="username" placeholder="Username"><br><br>
+                Password <input type="password" name="password" id="password" placeholder="Password"><br><br>
+                <br>
+                <input type="submit" value="Login" name="Login" id="login">
             </p>
             
         </form>
         
         <div class="buttons">
-            <a href="CreateAccount.php"><input type="submit" value="Create New Account" id="buttons"></a>
+            <a href="CreateAccount.php"><input type="submit" value="Create New Account" id="create"></a>
         </div>
         
         <?php
