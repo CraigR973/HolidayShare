@@ -32,5 +32,12 @@
           <a href="About.php">About</a>
           <a href="login.php">Log Out</a>
         </div>
+            
+        <div class="buttons">
+            <a href="login.php"><input type="submit" value="Log Out" id="logout"></a>
+            <br><br><br>
+            <a><input type="submit" value="Delete Account" id="delete"></a>
+        </div>
+            
     </body>
 </html>

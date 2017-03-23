@@ -21,7 +21,8 @@
         </script>
     </head>
     <body>
-        <span onclick="openNav()"><img src="docs/menu.png"></span><h1>Find</h1> 
+        
+        <span onclick="openNav()"><img src="docs/menu.png"></span><h1>Results</h1> 
             <br><br>
         
         <div id="mySidenav" class="sidenav">
@@ -32,14 +33,25 @@
           <a href="login.php">Log Out</a>
         </div>
             
+            <?php
+
+            for($i=0; $i<5; $i++){
+                $j = $i + 1;
+                echo "
+                <div class='results'>
+                    <p>Result $j</p>
+                </div>
+                <br>
+                ";
+                
+            }
+
+                
+            ?>
+            
         <div class="buttons">
-            <a href="results.php"><input type="submit" value="Suitcases" id="buttons"></a>
+            <a href="find.php"><input type="submit" value="Back To Find" id="buttons"></a>
             <br><br><br>
-            <a href="results.php"><input type="submit" value="Hand Luggage" id="buttons"></a>
-            <br><br><br>
-            <a href="results.php"><input type="submit" value="Accessories" id="buttons"></a>
-            <br><br><br>
-            <a href="results.php"><input type="submit" value="Pool Toys" id="buttons"></a>
         </div>
             
     </body>

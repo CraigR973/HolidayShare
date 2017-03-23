@@ -8,10 +8,13 @@ CreateAccount
 (Add form checking, javascript checkForm() is already there but doesn't work properly yet)
 
 Find 
-(Buttons for Suitcases + other shit like that)
+(Need to pass session variable to results)
 
 Share 
-(Form to make a post of some shit you want to share)
+(Form is there, doesn't do anything yet)
+
+Results
+(Gets variable for what the user searched and returns the results from the database)
 
 Profile 
 (Users info, logout option)
