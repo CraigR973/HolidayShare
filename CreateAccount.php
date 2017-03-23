@@ -21,27 +21,27 @@
                 enteredname.style.background = "white";
                 enteredname.style.background = "white";
                 
-                if((enteredusername.value==null) || (enteredusername.value=="")){
+                if((enteredusername.value===null) || (enteredusername.value==="")){
                     errs+="   * Username must not be empty\n";
                     enteredusername.style.background = "pink";
                 }
                 
-                if((entereduserpassword.value==null) || (entereduserpassword.value=="")){
+                if((entereduserpassword.value===null) || (entereduserpassword.value==="")){
                     errs+="   * Password must not be empty\n";
                     entereduserpassword.style.background = "pink";
                 }
                 
-                if((enteredname.value==null) || (enteredname.value=="")){
+                if((enteredname.value===null) || (enteredname.value==="")){
                     errs+="   * Name must not be empty\n";
                     enteredname.style.background = "pink";
                 }
                 
-                if((enteredage.value==null) || (enteredage.value=="")){
+                if((enteredage.value===null) || (enteredage.value==="")){
                     errs+="   * Age must not be empty\n";
                     enteredage.style.background = "pink";
                 }
                 
-                if(errs!==""){
+                if(errs!===""){
                     alert(errs);
                 }
                 
@@ -57,12 +57,17 @@
             <form method="post" name="myform" onsubmit="return checkForm();">
             
                 <p class="login">
-                Create Username <input type="text" name="newusername"><br>
-                Create Password <input type="text" name="newpassword"><br>
-                <input type="submit" value="Create Account" name="CreateAccount">
+                Create Username <input type="text" name="newusername" id="username" placeholder="Username"><br>
+                Create Password <input type="text" name="newpassword" id="password" placeholder="Password"><br>
+                <br><br>
+                <input type="submit" value="Create Account" name="CreateAccount" id="create">
                 </p>
             
             </form>
+        
+        <div class="buttons">
+            <a href="login.php"><input type="submit" value="Back To Login" id="create"></a>
+        </div>
         
         <?php
         
