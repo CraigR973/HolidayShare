@@ -38,7 +38,7 @@
         </script>
     </head>
     <body>
-        <h2>Create Account</h2>
+        <h1>Create Account</h1>
         
             <form method="post" name="myform" onsubmit="return checkForm();">
             
