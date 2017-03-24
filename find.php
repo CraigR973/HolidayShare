@@ -42,5 +42,10 @@
             <a href="results.php"><input type="submit" value="Pool Toys" id="buttons"></a>
         </div>
             
+        <div class="buttons">
+            <a href="menu.php"><input type="submit" value="Back To Menu" id="buttons"></a>
+            <br><br><br>
+        </div>
+            
     </body>
 </html>

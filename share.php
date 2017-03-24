@@ -50,6 +50,11 @@
             </p>
             
         </form>
+        
+        <div class="buttons">
+            <a href="menu.php"><input type="submit" value="Back To Menu" id="buttons"></a>
+            <br><br><br>
+        </div>
             
     </body>
 </html>

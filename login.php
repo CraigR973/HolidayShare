@@ -67,7 +67,7 @@
                     }
                     
                 }
-                echo "<p>Incorrect Username or Password.Please Re-enter</p>";
+                echo "<p>Incorrect Username or Password. Please Re-enter</p>";
             }
             }
             
