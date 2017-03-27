@@ -8,6 +8,7 @@
         <link rel="icon" sizes="276x299" href="docs/logo.png">
         <link rel="apple-touch-icon" href="docs/logo.png">
         <link rel="stylesheet" type="text/css" href="holiday.css">
+        <link rel="stylesheet" type="text/css" href="normalize.css"/>
         <script>
             function checkForm(){
                 var errs = "";
@@ -43,8 +44,8 @@
             <form method="post" name="myform" onsubmit="return checkForm();">
             
                 <p class="login">
-                Create Username <input type="text" name="newusername" id="username" placeholder="Username"><br>
-                Create Password <input type="text" name="newpassword" id="password" placeholder="Password"><br>
+                <input type="text" name="newusername" id="username" placeholder="Username"><br>
+                <input type="text" name="newpassword" id="password" placeholder="Password"><br>
                 <br><br>
                 <input type="submit" value="Create Account" name="CreateAccount" id="create">
                 </p>

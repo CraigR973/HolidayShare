@@ -8,21 +8,28 @@
         <link rel="icon" sizes="276x299" href="docs/logo.png">
         <link rel="apple-touch-icon" href="docs/logo.png">
         <link rel="stylesheet" type="text/css" href="holiday.css">
+        <link rel="stylesheet" type="text/css" href="normalize.css"/>
      
     </head>
     <body>
         <h1>Login</h1>
+        <form method="post" name="myform">
         
            
             
                 <p class="login">
-                Username <input type="text" name="username" id="username" placeholder="Username"><br>
-                Password <input type="password" name="password" id="password" placeholder="Password"><br>
+                <input type="text" name="username" id="username" placeholder="Username"><br>
+                <input type="password" name="password" id="password" placeholder="Password"><br>
                 <br><br>
                 <input type="submit" value="Login" name="Login" id="login">
                 </p>
             
             </form>
+            
+            
+            <div class="buttons">
+            <a href="welcome.php"><input type="submit" value="Back To Start Page" id="create"></a>
+        </div>
         
         
             

@@ -8,6 +8,7 @@
         <link rel="icon" sizes="276x299" href="docs/logo.png">
         <link rel="apple-touch-icon" href="docs/logo.png">
         <link rel="stylesheet" type="text/css" href="holiday.css">
+        <link rel="stylesheet" type="text/css" href="normalize.css"/>
         <script>
         /* Set the width of the side navigation to 250px */
         function openNav() {
@@ -26,7 +27,7 @@
         <div id="mySidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Close</a>
           <a href="menu.php">Home</a>
-          <a href="profile.php">Profile</a>
+          <a href="profile.php">My Profile</a>
           <a href="About.php">About</a>
           <a href="login.php">Log Out</a>
         </div>

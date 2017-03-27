@@ -1,6 +1,5 @@
 <html>
     <head>
-    <br>
         <title>Holiday Share</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +8,8 @@
         <link rel="icon" sizes="276x299" href="docs/logo.png">
         <link rel="apple-touch-icon" href="docs/logo.png">
         <link rel="stylesheet" type="text/css" href="holiday.css">
+        <link rel="stylesheet" type="text/css" href="normalize.css"/>
+     
     </head>
     <body>
         <h1>Holiday Share</h1>
@@ -19,13 +20,28 @@
             If you don't please create an account to start sharing.
         </p>
         
+            
+        
+        
+        
         
         
         <div class="buttons">
-            <a href="CreateAccount.php"><input type="submit" value="Create New Account" id="create"></a>
-            <a href="login.php"><input type="submit" value="Login" id="create"></a>
-        </div>
+            <a href="login.php"><input type="submit" value="Login" id="create1"></a>
+            <a href="CreateAccount.php"><input type="submit" value="Register" id="create"></a>
+             </div>
         
+         <script>
+            var x = window.innerWidth/2;
+            var y = window.innerHeight/2;
+            document.getElementById("create1").style.width = x;
+             
+              document.getElementById("create").style.width = x;
+             
+             
+            </script>
+        
+   
         
             
     </body>
