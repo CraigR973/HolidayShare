@@ -36,6 +36,10 @@
             
             <?php
 
+            session_start();
+            $search = $_SESSION['search'];
+            echo "<h1>$search</h1>";
+            
             for($i=0; $i<5; $i++){
                 $j = $i + 1;
                 echo "

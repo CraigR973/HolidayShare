@@ -33,20 +33,44 @@
           <a href="login.php">Log Out</a>
         </div>
             
-        <div class="buttons">
-            <a href="results.php"><input type="submit" value="Suitcases" id="buttons"></a>
+        <form>
+          <input type="text" name="search" id="search" placeholder="Search...">
+          <br><br>
+            <input type="submit" value="Search" name="Search" id="buttons">
+        </form>
+            
             <br><br><br>
-            <a href="results.php"><input type="submit" value="Hand Luggage" id="buttons"></a>
-            <br><br><br>
-            <a href="results.php"><input type="submit" value="Accessories" id="buttons"></a>
-            <br><br><br>
-            <a href="results.php"><input type="submit" value="Pool Toys" id="buttons"></a>
-        </div>
             
         <div class="buttons">
             <a href="menu.php"><input type="submit" value="Back To Menu" id="buttons"></a>
             <br><br><br>
         </div>
+            
+            <?php
+            
+            //connect to database
+            $servername = "devweb2016.cis.strath.ac.uk";
+            $username = "cs312r";
+            $password = "seK8Veihau7d";
+            $database = "cs312r";
+            $conn = new mysqli($servername, $username, $password, $database);
+
+            if($conn ->connect_error){
+                die("Connection Failed : ".$conn->connect_error);
+            }
+            
+            $term = isset($_POST['search']) ? $conn-> real_escape_string($_POST['search']): "";
+            echo "test";
+            
+            if(isset($_POST["Search"])){
+                echo "test2";
+                session_start();
+                $_SESSION['search'] = $term;
+                echo "$term";
+                header('Location: results.php');
+            }
+            
+            ?>
             
     </body>
 </html>
