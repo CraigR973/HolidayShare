@@ -11,7 +11,8 @@
         <link rel="stylesheet" type="text/css" href="normalize.css"/>
      
     </head>
-    <body>
+    <body class="background">
+        <br>
         <h1>Holiday Share</h1>
         <br><br><br>
         
@@ -26,7 +27,7 @@
         
         
         
-        <div class="buttons">
+        <div class="loginbuttons">
             <a href="login.php"><input type="submit" value="Login" id="create1"></a>
             <a href="CreateAccount.php"><input type="submit" value="Register" id="create"></a>
              </div>

@@ -12,6 +12,7 @@
      
     </head>
     <body>
+        <br>
         <h1>Login</h1>
         <form method="post" name="myform">
         
@@ -21,14 +22,14 @@
                 <input type="text" name="username" id="username" placeholder="Username"><br>
                 <input type="password" name="password" id="password" placeholder="Password"><br>
                 <br><br>
-                <input type="submit" value="Login" name="Login" id="login">
+                <input type="submit" value="Login" name="Login" id="create">
                 </p>
             
             </form>
             
             
-            <div class="buttons">
-            <a href="welcome.php"><input type="submit" value="Back To Start Page" id="create"></a>
+            <div class="loginbuttons">
+            <a href="welcome.php"><input type="submit" value="Back" id="create"></a>
         </div>
         
         

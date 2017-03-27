@@ -52,7 +52,7 @@
             
             </form>
         
-        <div class="buttons">
+        <div class="loginbuttons">
             <a href="welcome.php"><input type="submit" value="Back To Start Page" id="create"></a>
         </div>
         
