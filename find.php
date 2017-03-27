@@ -48,8 +48,9 @@
             
             <?php
             
-            $term = isset($_POST['text']);
-            echo "$term";
+            if(isset($_POST['text'])){
+                $term = $_POST['text'];
+            }
             
             if(isset($_POST["Login"])){
 
