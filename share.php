@@ -35,19 +35,20 @@
         <form method="post" name="myform">
             
             <p class="login">
-                Item Name <input type="text" name="username" id="username" placeholder="Name"><br><br>
+                Item Name <input type="text" name="name" id="username" placeholder="Name"><br><br>
                 Item Type:<br><br>
                 <select id="type" name="type">
-                    <option value="suitcase">Suitcase</option>
-                    <option value="Accessory">Accessory</option>
-                    <option value="1">...</option>
-                    <option value="2">...</option>
+                    <option value="Suitcase">Suitcase</option>
+                    <option value="Travel Accessory">Travel Accessory</option>
+                    <option value="Camping">Camping</option>
+                    <option value="Pool Toys">Pool Toys</option>
                 </select>
                 <br><br>
                 Item Description:<br><br>
-                <textarea placeholder="Description..."></textarea>
+                <textarea name = "desc" placeholder="Description..."></textarea>
                 <br><br>
                 <input type="submit" value="Post" name="Post" id="login">
+                <br><br>
             </p>
             
         </form>
@@ -57,5 +58,38 @@
             <br><br><br>
         </div>
             
+        <?php
+        
+        //connect to database
+        $servername = "devweb2016.cis.strath.ac.uk";
+        $username = "cs312r";
+        $password = "seK8Veihau7d";
+        $database = "cs312r";
+        $conn = new mysqli($servername, $username, $password, $database);
+
+        if($conn ->connect_error){
+            die("Connection Failed : ".$conn->connect_error);
+        }
+        
+        $name = isset($_POST['name']) ? $conn-> real_escape_string($_POST['name']): "";
+        $type = isset($_POST['type']) ? $conn-> real_escape_string($_POST['type']): "";
+        $desc = isset($_POST['desc']) ? $conn-> real_escape_string($_POST['desc']): "";
+        session_start();
+        $uname = $_SESSION['username'];
+        
+        if(isset($_POST["Post"])){
+            
+            $sql = "INSERT INTO `Items` (`itemType`, `itemName`, `username`, `itemDescription`) VALUES  ('$type','$name','$uname','$desc')";
+            
+        }
+        
+        if($conn->query($sql) === TRUE){
+            echo"<h3>Insert Sucessful</h3>";
+        } else{
+            die("Error on insert ".$conn->error);
+        } 
+        
+        ?>
+        
     </body>
 </html>
