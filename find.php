@@ -33,20 +33,34 @@
           <a href="login.php">Log Out</a>
         </div>
             
-        <div class="buttons">
-            <a href="results.php"><input type="submit" value="Suitcases" id="buttons"></a>
-            <br><br><br>
-            <a href="results.php"><input type="submit" value="Hand Luggage" id="buttons"></a>
-            <br><br><br>
-            <a href="results.php"><input type="submit" value="Accessories" id="buttons"></a>
-            <br><br><br>
-            <a href="results.php"><input type="submit" value="Pool Toys" id="buttons"></a>
-        </div>
+            <form method="post">
+          <input type="text" name="text" id="search" placeholder="Search...">
+          <br><br>
+          <input type="submit" value="Search" name="Login" id="create">
+        </form>
+            
+            <br><br><br><br><br><br><br>
             
         <div class="buttons">
             <a href="menu.php"><input type="submit" value="Back To Menu" id="buttons"></a>
             <br><br><br>
         </div>
+            
+            <?php
+            
+            if(isset($_POST['text'])){
+                $term = $_POST['text'];
+            }
+            
+            if(isset($_POST["Login"])){
+
+                session_start();
+                $_SESSION['searchterm'] = $term;
+                header('Location: results.php');
+                
+            }
+            
+            ?>
             
     </body>
 </html>

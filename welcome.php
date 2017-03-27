@@ -11,7 +11,13 @@
         <link rel="stylesheet" type="text/css" href="normalize.css"/>
      
     </head>
-    <body>
+
+
+    <body class="background">
+        <br>
+        <h1 id="title">Holiday Share</h1>
+        <br><br><br>
+
         
         <div class="img" style="text-align: center; margin-top: 45vw;">
         
@@ -22,18 +28,13 @@
         </div>
 
         
-            
-        
-        
-        
-        
-        
-        <div class="buttons">
+
+        <div class="loginbuttons">
             <a href="login.php"><input type="submit" value="Login" id="create1"></a>
             <a href="CreateAccount.php"><input type="submit" value="Register" id="create"></a>
              </div>
         
-         <script>
+        <script>
             var x = window.innerWidth/2;
             var y = window.innerHeight/2;
             document.getElementById("create1").style.width = x;
@@ -41,7 +42,7 @@
               document.getElementById("create").style.width = x;
              
              
-            </script>
+        </script>
         
    
         

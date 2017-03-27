@@ -25,8 +25,7 @@
     <body>
         
         <span onclick="openNav()"><img src="docs/menu.png"></span>
-        <h1>Profile</h1> 
-            <br><br>
+        <br><br>
         
         <div id="mySidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Close</a>
@@ -36,8 +35,12 @@
           <a href="login.php">Log Out</a>
         </div>
             
-             <?php
-            
+        <?php
+        
+            session_start();
+            $memberusername = $_SESSION['username'];
+            echo "<h1>$memberusername's Profile</h1>";
+        
             //connect to database
             $servername = "devweb2016.cis.strath.ac.uk";
             $username = "cs312r";
@@ -49,34 +52,18 @@
                 die("Connection Failed : ".$conn->connect_error);
             }
             
-      //      $userid = $conn->real_escape_string($_GET["id"]);
+            $picsql = "SELECT `ProfilePic` FROM `Members` WHERE `username` = '$memberusername' AND `ProfilePic` IS NOT NULL";        
+            $picresult = $conn ->query($picsql);
+            $row = $picresult->fetch_assoc();
+               
+            //close connection
+            $conn ->close();
             
-     //       $loginusername = $conn-> real_escape_string($_GET['username']);
-           
-        
-            //issue query
-            $sql = "SELECT * FROM `cs312r`.`Members`";
-            $result = $conn ->query($sql);
-            
-            
-            
-            
-            if($result->num_rows > 0){
-                while($row = $result->fetch_assoc()){
-                   
-                    echo "<p>".$row["username"]."</p>\n";
-                }
-            } else {
-                die ("No matches");
+            if($picresult->num_rows > 0){
+                echo "<img src='https://devweb2016.cis.strath.ac.uk/cs317c/docs/defaultProfilePicture.png' width='100' height='100' align='middle'/>";
+            } else {  
+                echo "<img src='",$row['ProfilePic'],"' width='100' height='100' align='middle'/>";
             }
-                    
-                
-             
-            
-            
-                //close connection
-                $conn ->close();
-                
         ?>
             
         <div class="buttons">

@@ -38,8 +38,8 @@
             
         </script>
     </head>
-    <body>
-        <h1>Create Account</h1>
+    <body class="background">
+        <h1 id="title">Create Account</h1>
         
             <form method="post" name="myform" onsubmit="return checkForm();">
             
@@ -52,7 +52,7 @@
             
             </form>
         
-        <div class="buttons">
+        <div class="loginbuttons">
             <a href="welcome.php"><input type="submit" value="Back To Start Page" id="create"></a>
         </div>
         
@@ -80,7 +80,7 @@
         $newpassword = isset($_POST['newpassword']) ? $conn-> real_escape_string($_POST['newpassword']): "";
         
         if(isset($_POST["CreateAccount"])){
-        $sql = "INSERT INTO `Members` ( `username`, `password`, `location`) VALUES  ('$newusername','$newpassword', 'null')";
+        $sql = "INSERT INTO `Members` ( `username`, `password`, `location`, `ProfilePic`) VALUES  ('$newusername','$newpassword', 'null', 'null')";
         if($conn->query($sql) === TRUE){
             echo"<h2>Account Created!</h2>";
         } else{

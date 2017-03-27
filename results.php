@@ -36,18 +36,47 @@
             
             <?php
 
-            for($i=0; $i<5; $i++){
-                $j = $i + 1;
-                echo "
-                <div class='results'>
-                    <p>Result $j</p>
-                </div>
-                <br>
-                ";
-                
+            session_start();
+            $search = $_SESSION['searchterm'];
+            
+            //connect to database
+            $servername = "devweb2016.cis.strath.ac.uk";
+            $username = "cs312r";
+            $password = "seK8Veihau7d";
+            $database = "cs312r";
+            $conn = new mysqli($servername, $username, $password, $database);
+
+            if($conn ->connect_error){
+                die("Connection Failed : ".$conn->connect_error);
             }
 
-                
+            //issue query
+            $sql = "SELECT * FROM `Items` WHERE `itemType` = '$search'";
+            $result = $conn ->query($sql);
+
+            if(!$result){
+                die("Query Failed ".$conn->error);
+            }
+            
+            if($result->num_rows > 0){
+                while($row = $result->fetch_assoc()){
+
+                    $name = $row["itemName"];
+                    $username = $row["username"];
+                    $desc = $row["itemDescription"];
+
+                    echo "
+                    <div class='results'>
+                        Item Name: $name <br>
+                        Posted By: $username <br>
+                        Description: <br> $desc <br>
+                    </div>
+                    <br>
+                    ";
+                    
+                }
+            }
+            
             ?>
             
         <div class="buttons">
