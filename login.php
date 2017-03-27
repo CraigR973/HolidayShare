@@ -1,6 +1,5 @@
 <html>
     <head>
-    <br>
         <title>Holiday Share</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,26 +8,25 @@
         <link rel="icon" sizes="276x299" href="docs/logo.png">
         <link rel="apple-touch-icon" href="docs/logo.png">
         <link rel="stylesheet" type="text/css" href="holiday.css">
+     
     </head>
     <body>
-        <h1>Holiday Share</h1>
-        <br><br><br>
-        <form method="post" name="myform">
+        <h1>Login</h1>
+        
+           
             
-            <p class="login">
-                Username <input type="text" name="username" id="username" placeholder="Username"><br><br>
-                Password <input type="password" name="password" id="password" placeholder="Password"><br><br>
-                <br>
+                <p class="login">
+                Username <input type="text" name="username" id="username" placeholder="Username"><br>
+                Password <input type="password" name="password" id="password" placeholder="Password"><br>
+                <br><br>
                 <input type="submit" value="Login" name="Login" id="login">
-            </p>
+                </p>
             
-        </form>
+            </form>
         
-        <div class="buttons">
-            <a href="CreateAccount.php"><input type="submit" value="Create New Account" id="create"></a>
-        </div>
         
-        <?php
+            
+            <?php
             
             //connect to database
             $servername = "devweb2016.cis.strath.ac.uk";
@@ -75,6 +73,8 @@
                 $conn ->close();
                 
         ?>
-            
+        
+        
+        
     </body>
 </html>

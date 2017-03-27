@@ -54,6 +54,13 @@ body {
     color: #878e8e;
 }
 
+.welcome{
+     text-align: center;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    letter-spacing: 3px;
+    color: #878e8e;
+ }
+
 #username{
     width: 100%;
     padding: 12px 20px;
