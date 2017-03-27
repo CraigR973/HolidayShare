@@ -11,9 +11,10 @@
         <link rel="stylesheet" type="text/css" href="normalize.css"/>
      
     </head>
-    <body>
+    <body class="background">
         <br>
-        <h1>Login</h1>
+        <h1 id="title">Login</h1>
+        <br><br><br>
         <form method="post" name="myform">
         
            

@@ -13,7 +13,7 @@
     </head>
     <body class="background">
         <br>
-        <h1>Holiday Share</h1>
+        <h1 id="title">Holiday Share</h1>
         <br><br><br>
         
         <p class ="welcome">
@@ -21,18 +21,13 @@
             If you don't please create an account to start sharing.
         </p>
         
-            
-        
-        
-        
-        
-        
+
         <div class="loginbuttons">
             <a href="login.php"><input type="submit" value="Login" id="create1"></a>
             <a href="CreateAccount.php"><input type="submit" value="Register" id="create"></a>
              </div>
         
-         <script>
+        <script>
             var x = window.innerWidth/2;
             var y = window.innerHeight/2;
             document.getElementById("create1").style.width = x;
@@ -40,7 +35,7 @@
               document.getElementById("create").style.width = x;
              
              
-            </script>
+        </script>
         
    
         

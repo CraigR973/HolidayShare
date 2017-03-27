@@ -38,8 +38,8 @@
             
         </script>
     </head>
-    <body>
-        <h1>Create Account</h1>
+    <body class="background">
+        <h1 id="title">Create Account</h1>
         
             <form method="post" name="myform" onsubmit="return checkForm();">
             
