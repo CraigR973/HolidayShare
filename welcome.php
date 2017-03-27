@@ -12,13 +12,15 @@
      
     </head>
     <body>
-        <h1>Holiday Share</h1>
-        <br><br><br>
         
-        <p class ="welcome">
-            Welcome to Holiday Share! If you already have an account please login.
-            If you don't please create an account to start sharing.
-        </p>
+        <div class="img" style="text-align: center; margin-top: 45vw;">
+        
+            <img src="docs/logo.png" alt="mainImage" style="width: 320px; height:200px;">
+            <h1 style="color: white;">Holiday Share</h1>
+     
+        
+        </div>
+
         
             
         

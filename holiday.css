@@ -15,6 +15,10 @@ h1{
     color: #878e8e;
 }
 
+div.img{
+   margin:0 auto;
+}
+
 body {
     background-color : #f4fbfb;
     background-image: url("https://s-media-cache-ak0.pinimg.com/736x/d0/f0/20/d0f0200e0179b4a4a498e4cbeafc2b6e.jpg");
@@ -27,8 +31,11 @@ body {
     text-align: center;
     position: absolute;
     bottom: 0;
+    border-style: none;
     
 }
+
+
 
 /* .loginButtons {
     text-align: center;
