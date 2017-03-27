@@ -33,10 +33,10 @@
           <a href="login.php">Log Out</a>
         </div>
             
-        <form>
-          <input type="text" name="search" id="search" placeholder="Search...">
+            <form method="post">
+          <input type="text" name="text" id="search" placeholder="Search...">
           <br><br>
-            <input type="submit" value="Search" name="Search" id="buttons">
+          <input type="submit" value="Search" name="Login" id="create">
         </form>
             
             <br><br><br>
@@ -48,26 +48,15 @@
             
             <?php
             
-            //connect to database
-            $servername = "devweb2016.cis.strath.ac.uk";
-            $username = "cs312r";
-            $password = "seK8Veihau7d";
-            $database = "cs312r";
-            $conn = new mysqli($servername, $username, $password, $database);
+            $term = isset($_POST['text']);
+            echo "$term";
+            
+            if(isset($_POST["Login"])){
 
-            if($conn ->connect_error){
-                die("Connection Failed : ".$conn->connect_error);
-            }
-            
-            $term = isset($_POST['search']) ? $conn-> real_escape_string($_POST['search']): "";
-            echo "test";
-            
-            if(isset($_POST["Search"])){
-                echo "test2";
                 session_start();
-                $_SESSION['search'] = $term;
-                echo "$term";
+                $_SESSION['searchterm'] = $term;
                 header('Location: results.php');
+                
             }
             
             ?>
