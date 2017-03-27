@@ -39,7 +39,7 @@
           <input type="submit" value="Search" name="Login" id="create">
         </form>
             
-            <br><br><br>
+            <br><br><br><br><br><br><br>
             
         <div class="buttons">
             <a href="menu.php"><input type="submit" value="Back To Menu" id="buttons"></a>
@@ -48,8 +48,9 @@
             
             <?php
             
-            $term = isset($_POST['text']);
-            echo "$term";
+            if(isset($_POST['text'])){
+                $term = $_POST['text'];
+            }
             
             if(isset($_POST["Login"])){
 
