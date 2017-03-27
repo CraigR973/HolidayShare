@@ -51,10 +51,19 @@
             if($conn ->connect_error){
                 die("Connection Failed : ".$conn->connect_error);
             }
-
+            
+            $picsql = "SELECT `ProfilePic` FROM `Members` WHERE `username` = '$memberusername' AND `ProfilePic` IS NOT NULL";        
+            $picresult = $conn ->query($picsql);
+            $row = $picresult->fetch_assoc();
+               
             //close connection
             $conn ->close();
-
+            
+            if($picresult->num_rows > 0){
+                echo "<img src='https://devweb2016.cis.strath.ac.uk/~kkb14164/HolidayShare/docs/defaultProfilePicture.png' width='100' height='100' align='middle'/>";
+            } else {  
+                echo "<img src='",$row['ProfilePic'],"' width='100' height='100' align='middle'/>";
+            }
         ?>
             
         <div class="buttons">
