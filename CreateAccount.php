@@ -59,8 +59,8 @@
         </div>
         
         <?php
-        $fileUploaded = null;
-        if(isset($_POST['fileToUpload'])){
+        $fileUploaded = true;
+//        if(isset($_POST["CreateAccount"])){
 
             $dir = "docs/profilepictures/";
             $upload = explode(".", $_FILES["fileToUpload"]["name"]);
@@ -73,7 +73,7 @@
                 $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
                 if($check == false) {
                     $fileUploaded = false;
-                } 
+                }
             } 
 
             if (file_exists($file)) {
@@ -92,7 +92,9 @@
             if($fileUploaded){
                 move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $file);
             }
-        }
+//        } else {
+//            $fileUploaded = false; 
+//        }
         //connect to database
         
         $servername = "devweb2016.cis.strath.ac.uk";
@@ -115,7 +117,7 @@
         $newpassword = isset($_POST['newpassword']) ? $conn-> real_escape_string($_POST['newpassword']): "";
         
         if(isset($_POST["CreateAccount"])){
-            if($fileUploaded === true){    
+            if($fileUploaded){    
                 $sql = "INSERT INTO `Members` ( `username`, `password`, `location`, `ProfilePic`) VALUES  ('$newusername','$newpassword', 'null', '$fileName')";
                 if($conn->query($sql) === TRUE){
                     echo"<h2>Account Created!</h2>";
