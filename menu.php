@@ -26,21 +26,33 @@
     </head>
     <body>
         
-        <span onclick="openNav()"><img src="docs/menu.png"></span><h1>Home</h1>
-            <br><br>
+        <ul>
+            
+            <li><a style="padding-top: 23px;" href="news.php">News</a></li>
+            <li><a style="padding-top: 23px;" href="contact.php">Contact</a></li>
+            <li><a style="padding-top: 23px;" href="about.php">About</a></li>
+
+            
+
+        </ul>
+        
+    <!--    <span onclick="openNav()"><img src="docs/menu.png"></span><h1>Home</h1>
+            <br><br> -->
+        <h1>Home</h1>
+        <br><br>
             <div class="buttons">
                 <a href="find.php"><input type="submit" value="Find" id="buttons"></a>
                 <br><br><br>
                 <a href="share.php"><input type="submit" value="Share" id="buttons"></a>
             </div>
         
-        <div id="mySidenav" class="sidenav">
+   <!--     <div id="mySidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Close</a>
           <a href="menu.php">Home</a>
           <a href="profile.php">My Profile</a>
           <a href="About.php">About</a>
           <a href="login.php">Log Out</a>
-        </div>
+        </div> -->
         
     </body>
 </html>

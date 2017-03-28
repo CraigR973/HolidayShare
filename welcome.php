@@ -14,12 +14,10 @@
 
 
     <body class="background">
-        <br>
-        <h1 id="title">Holiday Share</h1>
-        <br><br><br>
+        
 
         
-        <div class="img" style="text-align: center; margin-top: 45vw;">
+        <div class="img" style="text-align: center; margin-top: 15vw;">
         
             <img src="docs/logo.png" alt="mainImage" style="width: 320px; height:200px;">
             <h1 style="color: white;">Holiday Share</h1>
