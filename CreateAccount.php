@@ -41,11 +41,13 @@
     <body class="background">
         <h1 id="title">Create Account</h1>
         
-            <form method="post" name="myform" onsubmit="return checkForm();">
+            <form method="post" enctype="multipart/form-data" name="myform" onsubmit="return checkForm();">
             
                 <p class="login">
                 <input type="text" name="newusername" id="username" placeholder="Username"><br>
                 <input type="text" name="newpassword" id="password" placeholder="Password"><br>
+                <br><br>
+                <input type="file" name="fileToUpload" id="fileToUpload">
                 <br><br>
                 <input type="submit" value="Create Account" name="CreateAccount" id="create">
                 </p>
@@ -57,7 +59,40 @@
         </div>
         
         <?php
-        
+        $fileUploaded = null;
+        if(isset($_POST['fileToUpload'])){
+
+            $dir = "docs/profilepictures/";
+            $upload = explode(".", $_FILES["fileToUpload"]["name"]);
+            $fileName = $_POST['newusername'] . '.' . end($upload);
+            $file = $dir . basename($fileName);
+            $imageFileType = pathinfo($file,PATHINFO_EXTENSION);
+
+
+            if(isset($_POST["CreateAccount"])) {
+                $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+                if($check == false) {
+                    $fileUploaded = false;
+                } 
+            } 
+
+            if (file_exists($file)) {
+                $fileUploaded = false;
+            }
+
+            if ($_FILES["fileToUpload"]["size"] > 500000) {
+                $fileUploaded = false;
+            }
+
+            if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            && $imageFileType != "gif" ) {
+                $fileUploaded = false;
+            }
+
+            if($fileUploaded){
+                move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $file);
+            }
+        }
         //connect to database
         
         $servername = "devweb2016.cis.strath.ac.uk";
@@ -80,12 +115,21 @@
         $newpassword = isset($_POST['newpassword']) ? $conn-> real_escape_string($_POST['newpassword']): "";
         
         if(isset($_POST["CreateAccount"])){
-        $sql = "INSERT INTO `Members` ( `username`, `password`, `location`, `ProfilePic`) VALUES  ('$newusername','$newpassword', 'null', 'null')";
-        if($conn->query($sql) === TRUE){
-            echo"<h2>Account Created!</h2>";
-        } else{
-            die("Error on insert ".$conn->error);
-        }     
+            if($fileUploaded === true){    
+                $sql = "INSERT INTO `Members` ( `username`, `password`, `location`, `ProfilePic`) VALUES  ('$newusername','$newpassword', 'null', '$fileName')";
+                if($conn->query($sql) === TRUE){
+                    echo"<h2>Account Created!</h2>";
+                } else{
+                    die("Error on insert ".$conn->error);
+                }     
+            } else {
+                $sql = "INSERT INTO `Members` ( `username`, `password`, `location`, `ProfilePic`) VALUES  ('$newusername','$newpassword', 'null', 'null')";
+                if($conn->query($sql) === TRUE){
+                    echo"<h2>Account Created!</h2>";
+                } else{
+                    die("Error on insert ".$conn->error);
+                } 
+            }
         }
         
         //Close connection
