@@ -52,14 +52,14 @@
                 die("Connection Failed : ".$conn->connect_error);
             }
             
-            $picsql = "SELECT `ProfilePic` FROM `Members` WHERE `username` = '$memberusername' AND `ProfilePic` IS NOT NULL";        
+            $picsql = "SELECT `ProfilePic` FROM `Members` WHERE `username` = '$memberusername' AND `ProfilePic` != 'null'";        
             $picresult = $conn ->query($picsql);
             $row = $picresult->fetch_assoc();
                
             //close connection
             $conn ->close();
             
-            if($picresult->num_rows == 0){
+            if($picresult->num_rows === 0){
                 echo "<img src='https://devweb2016.cis.strath.ac.uk/cs317c/docs/defaultProfilePicture.png' width='100' height='100'/>";
             } else {  
                 //TODO
