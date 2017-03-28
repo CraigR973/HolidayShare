@@ -80,9 +80,9 @@
                 $fileUploaded = false;
             }
 
-            if ($_FILES["fileToUpload"]["size"] > 500000) {
-                $fileUploaded = false;
-            }
+//            if ($_FILES["fileToUpload"]["size"] > 500000) {
+//                $fileUploaded = false;
+//            }
 
             if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
             && $imageFileType != "gif" ) {
