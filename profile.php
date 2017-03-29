@@ -79,15 +79,19 @@
             
             $picsql = "SELECT `ProfilePic` FROM `Members` WHERE `username` = '$memberusername' AND `ProfilePic` != 'null'";        
             $picresult = $conn ->query($picsql);
-            $row = $picresult->fetch_assoc();
+            $pic = $picresult->fetch_assoc();
                
             //close connection
             $conn ->close();
             
             if($picresult->num_rows === 0){
                 echo "<img src='https://devweb2016.cis.strath.ac.uk/cs317c/docs/defaultProfilePicture.png' width='100' height='100'/>";
-            } else {  
-                //TODO
+            } else {                  
+                foreach (glob("docs/profilepictures/*") as $p){
+                    if($p == "docs/profilepictures/" . $pic['ProfilePic']){
+                        echo "<img src=\"https://devweb2016.cis.strath.ac.uk/cs317c/$p\" width=\"100\" height=\"100\" />";
+                    }
+                }
             }
         ?>
             
