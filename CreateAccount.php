@@ -68,21 +68,32 @@
         
         <?php
         $fileUploaded = true;
-//        if(isset($_POST["CreateAccount"])){
 
-            $dir = "docs/profilepictures/";
-            $upload = explode(".", $_FILES["fileToUpload"]["name"]);
-            $fileName = $_POST['newusername'] . '.' . end($upload);
-            $file = $dir . basename($fileName);
-            $imageFileType = pathinfo($file,PATHINFO_EXTENSION);
-
+        //connect to database
+        
+        $servername = "devweb2016.cis.strath.ac.uk";
+        $username = "cs312r";
+        $password = "seK8Veihau7d";
+        $database = "cs312r";
+        $conn = new mysqli($servername, $username, $password, $database);
+        
+        if($conn ->connect_error){
+            die("Connection Failed : ".$conn->connect_error);
+        }
 
             if(isset($_POST["CreateAccount"])) {
+                
+                $dir = "docs/profilepictures/";
+                $upload = explode(".", $_FILES["fileToUpload"]["name"]);
+                $fileName = $_POST['newusername'] . '.' . end($upload);
+                $file = $dir . basename($fileName);
+                $imageFileType = pathinfo($file,PATHINFO_EXTENSION);
+                
                 $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
                 if($check == false) {
                     $fileUploaded = false;
                 }
-            } 
+            
 
             if (file_exists($file)) {
                 $fileUploaded = false;
@@ -103,17 +114,7 @@
 //        } else {
 //            $fileUploaded = false; 
 //        }
-        //connect to database
-        
-        $servername = "devweb2016.cis.strath.ac.uk";
-        $username = "cs312r";
-        $password = "seK8Veihau7d";
-        $database = "cs312r";
-        $conn = new mysqli($servername, $username, $password, $database);
-        
-        if($conn ->connect_error){
-            die("Connection Failed : ".$conn->connect_error);
-        }
+
         
         //setup variables from$_POST
         
@@ -141,6 +142,7 @@
                 } 
             }
         }
+            }
         
         //Close connection
         $conn ->close();
