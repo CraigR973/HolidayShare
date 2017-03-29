@@ -212,7 +212,21 @@ select{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
+input[type="file"] {
+    display: none;
+}
 
+.uploadPic{
+    padding: 15px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    float: inside;
+    background-color: #adf7f7;
+    border: none;
+    color: grey;
+}
 
 /*ul {
     list-style-type: none;

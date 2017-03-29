@@ -54,7 +54,8 @@
                 <input type="text" name="newusername" id="username" placeholder="Username"><br>
                 <input type="password" name="newpassword" id="password" placeholder="Password"><br>
                 <input type="password" name="confirmpassword" id="password" placeholder="Confirm password"><br>
-                <br><br>
+                <br>
+                <label for="fileToUpload" class="uploadPic">Add a Profile Picture</label>
                 <input type="file" name="fileToUpload" id="fileToUpload">
                 <br><br>
                 <input type="submit" value="Create Account" name="CreateAccount" id="create">
@@ -111,9 +112,10 @@
             if($fileUploaded){
                 move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $file);
             }
-//        } else {
-//            $fileUploaded = false; 
-//        }
+            
+            } else {
+            $fileUploaded = false; 
+            }
 
         
         //setup variables from$_POST
@@ -140,9 +142,8 @@
                 } else{
                     die("Error on insert ".$conn->error);
                 } 
-            }
+            }        
         }
-            }
         
         //Close connection
         $conn ->close();
