@@ -14,7 +14,8 @@
                 var errs = "";
                 var enteredusername = document.forms["myform"]["newusername"];
                 var entereduserpassword = document.forms["myform"]["newpassword"];
-        
+                var confirmuserpassword = document.forms["myform"]["confirmpassword"];
+
                 enteredusername.style.background = "white";
                 entereduserpassword.style.background = "white";
                 
@@ -26,6 +27,12 @@
                 if((entereduserpassword.value==null) || (entereduserpassword.value=="")){
                     errs+="   * Password must not be empty\n";
                     entereduserpassword.style.background = "pink";
+                } else {
+                    if (confirm_user_password.value != entereduserpassword.value) {
+                        errs += "   * Passwords must match\n";
+                        entereduserpassword.style.background = "pink";
+                        confirmuserpassword.style.background = "pink";
+                    }
                 }
                 
                 if(errs!==""){
@@ -46,6 +53,7 @@
                 <p class="login">
                 <input type="text" name="newusername" id="username" placeholder="Username"><br>
                 <input type="text" name="newpassword" id="password" placeholder="Password"><br>
+                <input type="text" name="confirmpassword" id="password" placeholder="Confirm password"><br>
                 <br><br>
                 <input type="file" name="fileToUpload" id="fileToUpload">
                 <br><br>
