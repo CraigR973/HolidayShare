@@ -26,15 +26,28 @@
     </head>
     <body>
         
-        <ul>
+        <ul id ="menu">
             
-            <li><a style="padding-top: 23px;" href="news.php">News</a></li>
-            <li><a style="padding-top: 23px;" href="contact.php">Contact</a></li>
-            <li><a style="padding-top: 23px;" href="about.php">About</a></li>
+            <li><a style="padding-top: 23px;" href="news.php" id="menu1">News</a></li>
+            <li><a style="padding-top: 23px;" href="contact.php" id="menu2">Contact</a></li>
+            <li><a style="padding-top: 23px;" href="about.php" id="menu3">About</a></li>
 
             
 
         </ul>
+        
+         <script>
+            var x = window.innerWidth;
+            var y = window.innerWidth/3;
+            document.getElementById("menu").style.width = x;
+//            document.getElementById("menu1").style.width = y;
+//            document.getElementById("menu2").style.width = y;
+//            document.getElementById("menu3").style.width = y;
+             
+              
+             
+             
+        </script>
         
     <!--    <span onclick="openNav()"><img src="docs/menu.png"></span><h1>Home</h1>
             <br><br> -->
