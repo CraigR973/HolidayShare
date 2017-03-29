@@ -9,63 +9,72 @@
         <link rel="apple-touch-icon" href="docs/logo.png">
         <link rel="stylesheet" type="text/css" href="holiday.css">
         <link rel="stylesheet" type="text/css" href="normalize.css"/>
-        <style>
-           
-        </style>
-        <script>
-        /* Set the width of the side navigation to 250px */
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-        }
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        /* Set the width of the side navigation to 0 */
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-}
-        </script>
+        <style>
+            body {margin:0;}
+
+            .icon-bar {
+                width: 100%;
+                background-color: #adf7f7;
+                overflow: auto;
+                position: absolute;
+                bottom: 0;
+            }
+
+            .icon-bar a {
+                float: left;
+                width: 20%;
+                text-align: center;
+                padding: 12px 0;
+                transition: all 0.3s ease;
+                color: grey;
+                font-size: 18px;
+                text-decoration: none;
+            }
+
+            .icon-bar a:hover {
+                background-color: darkblue;
+            }
+
+            .active {
+                background-color: darkblue;
+               
+            }
+        </style>
+
     </head>
     <body>
-        
-        <ul id ="menu">
-            
-            <li><a style="padding-top: 23px;" href="news.php" id="menu1">News</a></li>
-            <li><a style="padding-top: 23px;" href="contact.php" id="menu2">Contact</a></li>
-            <li><a style="padding-top: 23px;" href="about.php" id="menu3">About</a></li>
 
-            
+        <div class="icon-bar">
+            <a class="active "href="#"><i class="fa fa-home"></i><br/>Home</a>
+            <a href="profile.php"><i class="fa fa-user-o"></i><br/>My HS</a>
+            <a href="find.php"><i class="fa fa-search"></i><br/>Search</a>
+             
+            <a href="About.php"><i class="fa fa-info"></i><br/>About</a>
+            <a href="share.php"><i class="fa fa-share-alt"></i><br/>Share</a> 
+        </div>
 
-        </ul>
+
+
+
         
-         <script>
-            var x = window.innerWidth;
-            var y = window.innerWidth/3;
-            document.getElementById("menu").style.width = x;
-//            document.getElementById("menu1").style.width = y;
-//            document.getElementById("menu2").style.width = y;
-//            document.getElementById("menu3").style.width = y;
-             
-              
-             
-             
-        </script>
+        <div class="img" style="text-align: center;">
         
-    <!--    <span onclick="openNav()"><img src="docs/menu.png"></span><h1>Home</h1>
-            <br><br> -->
-        <h1>Home</h1>
+            <h1 style="font-size: 25px; margin-bottom: 0vw; float: left; margin-left: 12vw;">Holiday Share</h1><img src="docs/logo.png" alt="mainImage" style="width: 120px; height:60px; margin-top: 0vw; float: right;">
+            
+            
+     
+        
+        </div>
         <br><br>
-            <div class="buttons">
-                <a href="find.php"><input type="submit" value="Find" id="buttons"></a>
-                <br><br><br>
-                <a href="share.php"><input type="submit" value="Share" id="buttons"></a>
-            </div>
-        
-   <!--     <div id="mySidenav" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Close</a>
-          <a href="menu.php">Home</a>
-          <a href="profile.php">My Profile</a>
-          <a href="About.php">About</a>
-          <a href="login.php">Log Out</a>
-        </div> -->
-        
+        <div class="buttons">
+            <a href="find.php"><input type="submit" value="Find" id="buttons"></a>
+            <br><br><br>
+            <a href="share.php"><input type="submit" value="Share" id="buttons"></a>
+        </div>
+
+       
+
     </body>
 </html>

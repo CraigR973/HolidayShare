@@ -9,29 +9,56 @@
         <link rel="apple-touch-icon" href="docs/logo.png">
         <link rel="stylesheet" type="text/css" href="holiday.css">
         <link rel="stylesheet" type="text/css" href="normalize.css"/>
-        <script>
-        /* Set the width of the side navigation to 250px */
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-        }
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        /* Set the width of the side navigation to 0 */
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-}
-        </script>
+        <style>
+            body {margin:0;}
+
+            .icon-bar {
+                width: 100%;
+                background-color: #adf7f7;
+                overflow: auto;
+                position: absolute;
+                bottom: 0;
+            }
+
+            .icon-bar a {
+                float: left;
+                width: 20%;
+                text-align: center;
+                padding: 12px 0;
+                transition: all 0.3s ease;
+                color: grey;
+                font-size: 18px;
+                text-decoration: none;
+            }
+
+            .icon-bar a:hover {
+                background-color: darkblue;
+            }
+
+            .active {
+                background-color: darkblue;
+               
+            }
+        </style>
+      
     </head>
     <body>
-        <span onclick="openNav()"><img src="docs/menu.png"></span><h1>Find</h1> 
+        
+        <div class="icon-bar">
+            <a href="menu.php"><i class="fa fa-home"></i><br/>Home</a>
+            <a href="profile.php"><i class="fa fa-user-o"></i><br/>My HS</a>
+            <a class="active" href="#"><i class="fa fa-search"></i><br/>Search</a>
+             
+            <a href="About.php"><i class="fa fa-info"></i><br/>About</a>
+            <a href="share.php"><i class="fa fa-share-alt"></i><br/>Share</a> 
+        </div>
+
+        <h1>Find</h1> 
             <br><br>
         
-        <div id="mySidenav" class="sidenav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Close</a>
-          <a href="menu.php">Home</a>
-          <a href="profile.php">My Profile</a>
-          <a href="About.php">About</a>
-          <a href="login.php">Log Out</a>
-        </div>
+        
             
             <form method="post">
           <input type="text" name="text" id="search" placeholder="Search...">
@@ -41,10 +68,7 @@
             
             <br><br><br><br><br><br><br>
             
-        <div class="buttons">
-            <a href="menu.php"><input type="submit" value="Back To Menu" id="buttons"></a>
-            <br><br><br>
-        </div>
+       
             
             <?php
             

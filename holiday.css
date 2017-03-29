@@ -14,6 +14,7 @@ h1{
     letter-spacing: 3px;
     color: #878e8e;
     font-size: 50px;
+    margin-top: 2vw;
 }
 
 #title{
@@ -22,6 +23,7 @@ h1{
     letter-spacing: 3px;
     color: white;
     font-size: 50px;
+    
 }
 
 #search{
@@ -105,7 +107,7 @@ body {
     float:right;
     background-color: #adf7f7;
     border: none;
-    color: white;
+    color: grey;
 }
 
 #create1{
@@ -117,7 +119,7 @@ body {
     float:left;
     background-color: #adf7f7;
     border: none;
-    color: white;
+    color: grey;
 }
 
 .login{
@@ -147,7 +149,7 @@ body {
 
 
 #username{
-    width: 100%;
+    width: 80%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -195,7 +197,7 @@ body {
 
 textarea {
     width: 80%;
-    height: 150px;
+    height: 100px;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -276,7 +278,7 @@ select{
 }
 
 
-ul {
+/*ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -308,3 +310,29 @@ li a:hover {
     text-decoration: underline;
 
 }
+
+.icon-bar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+}
+
+.icon-bar a {
+    float: left;
+    width: 20%;
+    text-align: center;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 36px;
+}
+
+.icon-bar a:hover {
+    background-color: #000;
+}
+
+.active {
+    background-color: #4CAF50 !important;
+}
+
+body {margin:0;}*/
