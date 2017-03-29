@@ -85,17 +85,18 @@
             $conn ->close();
             
             if($picresult->num_rows === 0){
-                echo "<img src='https://devweb2016.cis.strath.ac.uk/cs317c/docs/defaultProfilePicture.png' width='100' height='100'/>";
+                echo "<center><img src='https://devweb2016.cis.strath.ac.uk/cs317c/docs/defaultProfilePicture.png' width='100' height='100'/></center>";
             } else {                  
                 foreach (glob("docs/profilepictures/*") as $p){
                     if($p == "docs/profilepictures/" . $pic['ProfilePic']){
-                        echo "<img src=\"https://devweb2016.cis.strath.ac.uk/cs317c/$p\" width=\"100\" height=\"100\" />";
+                        echo "<center><img src=\"https://devweb2016.cis.strath.ac.uk/cs317c/$p\" width=\"100\" height=\"100\" /></center>";
                     }
                 }
             }
         ?>
             
         <div class="buttons">
+            <br><br><br>
             <a href="login.php"><input type="submit" value="Log Out" id="logout"></a>
             <br><br><br>
             <a><input type="submit" value="Delete Account" id="delete"></a>
