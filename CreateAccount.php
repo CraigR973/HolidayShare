@@ -52,8 +52,8 @@
             
                 <p class="login">
                 <input type="text" name="newusername" id="username" placeholder="Username"><br>
-                <input type="text" name="newpassword" id="password" placeholder="Password"><br>
-                <input type="text" name="confirmpassword" id="password" placeholder="Confirm password"><br>
+                <input type="password" name="newpassword" id="password" placeholder="Password"><br>
+                <input type="password" name="confirmpassword" id="password" placeholder="Confirm password"><br>
                 <br><br>
                 <input type="file" name="fileToUpload" id="fileToUpload">
                 <br><br>
