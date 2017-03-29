@@ -61,7 +61,7 @@
         
         <div class="img" style="text-align: center;">
         
-            <h1 style="font-size: 25px; margin-bottom: 0vw; float: left; margin-left: 12vw;">Holiday Share</h1><img src="docs/logo.png" alt="mainImage" style="width: 120px; height:60px; margin-top: 0vw; float: right;">
+            <h1>Holiday Share</h1><img src="docs/logo.png" alt="mainImage" style="width: 160px; height:100px;">
             
             
      

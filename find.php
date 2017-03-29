@@ -58,13 +58,15 @@
         <h1>Find</h1> 
             <br><br>
         
-        
+        <form method="post">
+            <p class="login">
             
-            <form method="post">
           <input type="text" name="text" id="search" placeholder="Search...">
           <br><br>
-          <input type="submit" value="Search" name="Login" id="create">
-        </form>
+          <input type="submit" value="Search" name="Login" id="login">
+          </p>
+            </form>
+            
             
             <br><br><br><br><br><br><br>
             

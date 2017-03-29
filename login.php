@@ -23,14 +23,14 @@
                 <input type="text" name="username" id="username" placeholder="Username"><br>
                 <input type="password" name="password" id="password" placeholder="Password"><br>
                 <br><br>
-                <input type="submit" value="Login" name="Login" id="create">
+                <input type="submit" value="Login" name="Login" id="buttons">
                 </p>
             
             </form>
             
             
-            <div class="loginbuttons">
-                <a href="welcome.php"><input type="submit" value="Back" id="create"></a>
+            <div class="login">
+                <a href="welcome.php"><input type="submit" value="Back" id="buttons"></a>
         </div>
         
         
@@ -74,7 +74,7 @@
                     }
                     
                 }
-                echo "<p>Incorrect Username or Password. Please Re-enter</p>";
+                echo "<p class=\"welcome\">Incorrect Username or Password. Please Re-enter</p>";
             }
             }
             
