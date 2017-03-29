@@ -58,7 +58,7 @@
         </div>
       
         <h1>Share</h1>
-        <form method="post" name="myform">
+        <form method="post" enctype="multipart/form-data" name="myform">
             
             <p class="login">
                 Item Name</br> <input type="text" name="name" id="username" placeholder="Name"><br><br>
@@ -73,6 +73,9 @@
                 Item Description:<br><br>
                 <textarea name = "desc" placeholder="Description..."></textarea>
                 <br><br>
+                <label for="fileToUpload" class="uploadPic">Add a Picture of Your Item</label>
+                <input type="file" name="fileToUpload" id="fileToUpload">
+                <br><br>
                 <input type="submit" value="Post" name="Post" id="login">
                 <br><br>
             </p>
@@ -82,6 +85,7 @@
        
             
         <?php
+        $fileUploaded = true;
         
         //connect to database
         $servername = "devweb2016.cis.strath.ac.uk";
@@ -94,6 +98,46 @@
             die("Connection Failed : ".$conn->connect_error);
         }
         
+        $maxidsql = "SELECT MAX(`id`) AS 'maxid' FROM `Items`";     
+        $maxidresult = $conn ->query($maxidsql);
+        $maxid = $maxidresult->fetch_assoc();
+        $id = $maxid['maxid'];
+        
+        if(isset($_POST["Post"])) {
+            $dir = "docs/itemimages/";
+            $upload = explode(".", $_FILES["fileToUpload"]["name"]);
+            $newID = $id + 1;
+            $fileName = $newID . '.' . end($upload);
+            $file = $dir . basename($fileName);
+            $imageFileType = pathinfo($file,PATHINFO_EXTENSION);
+                
+            $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+            if($check == false) {
+                $fileUploaded = false;
+            }
+            
+
+            if (file_exists($file)) {
+                $fileUploaded = false;
+            }
+
+//            if ($_FILES["fileToUpload"]["size"] > 500000) {
+//                $fileUploaded = false;
+//            }
+
+            if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            && $imageFileType != "gif" ) {
+                $fileUploaded = false;
+            }
+
+            if($fileUploaded){
+                move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $file);
+            }
+            
+        } else {
+            $fileUploaded = false; 
+        }
+             
         if(isset($_POST["Post"])){
             
             $name = isset($_POST['name']) ? $conn-> real_escape_string($_POST['name']): "";
@@ -101,10 +145,12 @@
             $desc = isset($_POST['desc']) ? $conn-> real_escape_string($_POST['desc']): "";
             session_start();
             $uname = $_SESSION['username'];
+            if($fileUploaded){
+                $sql = "INSERT INTO `Items` (`id`, `itemType`, `itemName`, `username`, `itemDescription`, `itemImage`) VALUES  ('$newID', '$type','$name','$uname','$desc', '$fileName')";
+            } else{
+                $sql = "INSERT INTO `Items` (`itemType`, `itemName`, `username`, `itemDescription`, `itemImage`) VALUES  ('$type','$name','$uname','$desc', 'null')";
+            }
             
-            $sql = "INSERT INTO `Items` (`itemType`, `itemName`, `username`, `itemDescription`) VALUES  ('$type','$name','$uname','$desc')";
-            
-        
         
         if($conn->query($sql) === TRUE){
             echo"<h3>Insert Sucessful</h3>";
