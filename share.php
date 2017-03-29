@@ -94,23 +94,27 @@
             die("Connection Failed : ".$conn->connect_error);
         }
         
-        $name = isset($_POST['name']) ? $conn-> real_escape_string($_POST['name']): "";
-        $type = isset($_POST['type']) ? $conn-> real_escape_string($_POST['type']): "";
-        $desc = isset($_POST['desc']) ? $conn-> real_escape_string($_POST['desc']): "";
-        session_start();
-        $uname = $_SESSION['username'];
-        
         if(isset($_POST["Post"])){
+            
+            $name = isset($_POST['name']) ? $conn-> real_escape_string($_POST['name']): "";
+            $type = isset($_POST['type']) ? $conn-> real_escape_string($_POST['type']): "";
+            $desc = isset($_POST['desc']) ? $conn-> real_escape_string($_POST['desc']): "";
+            session_start();
+            $uname = $_SESSION['username'];
             
             $sql = "INSERT INTO `Items` (`itemType`, `itemName`, `username`, `itemDescription`) VALUES  ('$type','$name','$uname','$desc')";
             
-        }
+        
         
         if($conn->query($sql) === TRUE){
             echo"<h3>Insert Sucessful</h3>";
         } else{
             die("Error on insert ".$conn->error);
         } 
+        
+        }
+        
+        
         
         ?>
         

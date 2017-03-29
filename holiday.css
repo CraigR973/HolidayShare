@@ -64,7 +64,7 @@ body {
 
 }
 
-.buttons{
+*/.buttons{
 
     text-align: center;
 }
@@ -80,7 +80,7 @@ body {
     font-size: 32px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     
-}
+}/*
 
 /*#loginButtons{
     background-color: #adf7f7;
