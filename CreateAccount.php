@@ -11,35 +11,35 @@
         <link rel="stylesheet" type="text/css" href="normalize.css"/>
         <script>
             function checkForm(){
-                var errs = "";
-                var enteredusername = document.forms["myform"]["newusername"];
-                var entereduserpassword = document.forms["myform"]["newpassword"];
-                var confirmuserpassword = document.forms["myform"]["confirmpassword"];
+                var errors = "";
+                var entered_username = document.forms["myform"]["newusername"];
+                var entered_user_password = document.forms["myform"]["newpassword"];
+                var confirm_user_password = document.forms["myform"]["confirmpassword"];
 
-                enteredusername.style.background = "white";
-                entereduserpassword.style.background = "white";
+                entered_username.style.background = "white";
+                entered_user_password.style.background = "white";
                 
-                if((enteredusername.value==null) || (enteredusername.value=="")){
-                    errs+="   * Username must not be empty\n";
-                    enteredusername.style.background = "pink";
+                if((entered_username.value===null) || (entered_username.value==="")){
+                    errors+="   * Username must not be empty\n";
+                    entered_username.style.background = "pink";
                 }
                 
-                if((entereduserpassword.value==null) || (entereduserpassword.value=="")){
-                    errs+="   * Password must not be empty\n";
-                    entereduserpassword.style.background = "pink";
+                if((entered_user_password.value===null) || (entered_user_password.value==="")){
+                    errors+="   * Password must not be empty\n";
+                    entered_user_password.style.background = "pink";
                 } else {
-                    if (confirm_user_password.value != entereduserpassword.value) {
-                        errs += "   * Passwords must match\n";
-                        entereduserpassword.style.background = "pink";
-                        confirmuserpassword.style.background = "pink";
+                    if (confirm_user_password.value !== entered_user_password.value) {
+                        errors += "   * Passwords must match\n";
+                        entered_user_password.style.background = "pink";
+                        confirm_user_password.style.background = "pink";
                     }
                 }
                 
-                if(errs!==""){
-                    alert(errs);
+                if(errors!==""){
+                    alert(errors);
                 }
                 
-                return (errs=="");
+                return (errors==="");
                 
             }
             
