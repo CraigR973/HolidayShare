@@ -52,7 +52,7 @@ body {
 
 .loginbuttons{
     text-align: center;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     border-style: none;
 
@@ -157,6 +157,15 @@ body {
     border-style: groove;
     border-color: white;
     padding: 20px 20px;
+    text-align: center;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    letter-spacing: 3px;
+    color: #878e8e;
+/*    width: 80%;*/
+    margin-left: 10vw;
+    margin-right: 10vw;
+    
+    
 }
 
 #delete{

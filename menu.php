@@ -18,7 +18,7 @@
                 width: 100%;
                 background-color: #adf7f7;
                 overflow: auto;
-                position: absolute;
+                position: fixed;
                 bottom: 0;
             }
 
@@ -41,6 +41,10 @@
                 background-color: darkblue;
                
             }
+            
+            .main {
+                margin-bottom: 25vw;
+            }
         </style>
 
     </head>
@@ -57,7 +61,7 @@
 
 
 
-
+        <div class="main">
         
         <div class="img" style="text-align: center;">
         
@@ -72,6 +76,7 @@
             <a href="find.php"><input type="submit" value="Find" id="buttons"></a>
             <br><br><br>
             <a href="share.php"><input type="submit" value="Share" id="buttons"></a>
+        </div>
         </div>
 
        

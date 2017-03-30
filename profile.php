@@ -19,7 +19,7 @@
                 width: 100%;
                 background-color: #adf7f7;
                 overflow: auto;
-                position: absolute;
+                position: fixed;
                 bottom: 0;
             }
 
@@ -42,6 +42,9 @@
                 background-color: darkblue;
                
             }
+            .main {
+                margin-bottom: 25vw;
+            }
         </style>
         
        
@@ -56,6 +59,8 @@
             <a href="About.php"><i class="fa fa-info"></i><br/>About</a>
             <a href="share.php"><i class="fa fa-share-alt"></i><br/>Share</a> 
         </div>
+        
+        <div class="main">
 
         <?php
         
@@ -145,9 +150,10 @@
         
         <div class="buttons">
             <br>
-            <a href="login.php"><input type="submit" value="Log Out" id="logout"></a>
+            <a href="welcome.php"><input type="submit" value="Log Out" id="logout"></a>
             <br><br><br>
             <a><input type="submit" value="Delete Account" id="delete"></a>
+        </div>
         </div>
             
     </body>

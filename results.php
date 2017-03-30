@@ -18,7 +18,7 @@
                 width: 100%;
                 background-color: #adf7f7;
                 overflow: auto;
-                position: absolute;
+                position: fixed;
                 bottom: 0;
             }
 
@@ -41,6 +41,9 @@
                 background-color: darkblue;
                
             }
+            .main {
+                margin-bottom: 25vw;
+            }
         </style>
         
         
@@ -51,14 +54,15 @@
         <div class="icon-bar">
             <a href="menu.php"><i class="fa fa-home"></i><br/>Home</a>
             <a href="profile.php"><i class="fa fa-user-o"></i><br/>My HS</a>
-            <a href="find.php"><i class="fa fa-search"></i><br/>Search</a>
+            <a class="active" href="find.php"><i class="fa fa-search"></i><br/>Search</a>
              
             <a href="About.php"><i class="fa fa-info"></i><br/>About</a>
             <a href="share.php"><i class="fa fa-share-alt"></i><br/>Share</a> 
         </div>
-
+<div class="main">
         <h1>Results</h1>
         <br><br>
+        
         <form method = 'post' name='result$id'>
      
             <?php
@@ -109,9 +113,11 @@
             }
             
             ?>
-            
-            <input type='submit' name='requestbutton' value='request'>
+            <div class ="login">
+            <input type='submit' name='requestbutton' value='Request' id="buttons">
+            </div>
             </form>
+        
         
         <?php
              
@@ -131,6 +137,6 @@
 
         
         ?>
-        
+        </div>
     </body>
 </html>

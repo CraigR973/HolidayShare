@@ -18,7 +18,7 @@
                 width: 100%;
                 background-color: #adf7f7;
                 overflow: auto;
-                position: absolute;
+                position: fixed;
                 bottom: 0;
             }
 
@@ -41,6 +41,10 @@
                 background-color: darkblue;
                
             }
+            
+            .main {
+                margin-bottom: 25vw;
+            }
         </style>
         
       
@@ -60,13 +64,14 @@
        
         <h1>About</h1> 
             <br><br>
-        
+            <div class="main">
             <p class="about">Holiday Share is a sharing community allowing users to connect and share their holiday items that would otherwise gather dust for most of the year.</p>
             <p class="about">To request to borrow an item, select the "Find" option on the main menu and search for the item you're looking for.</p>
             <p class="about">To share an item, select the "Share" option on the main menu and make a post displaying the item you want to share.</p>
             <br>
             <p class="about">Happy Sharing!</p>
             <br>
+            </div>
             
         
     </body>

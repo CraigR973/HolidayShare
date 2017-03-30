@@ -18,7 +18,7 @@
                 width: 100%;
                 background-color: #adf7f7;
                 overflow: auto;
-                position: absolute;
+                position: fixed;
                 bottom: 0;
             }
 
@@ -41,6 +41,10 @@
                 background-color: darkblue;
                
             }
+            
+            .main {
+                margin-bottom: 25vw;
+            }
         </style>
       
     </head>
@@ -57,7 +61,7 @@
 
         <h1>Find</h1> 
             <br><br>
-        
+            <div class="main">
         <form method="post">
             <p class="login">
             
@@ -87,6 +91,6 @@
             }
             
             ?>
-            
+            </div>  
     </body>
 </html>
