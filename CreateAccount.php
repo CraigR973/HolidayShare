@@ -125,7 +125,7 @@
         //Do password hashing later
         //$newpassword = isset($_POST['newpassword']) ? $conn-> real_escape_string(password_hash($_POST['newpassword'],PASSWORD_DEFAULT)): ""; //real escape string may cause issues
         
-        $newpassword = isset($_POST['newpassword']) ? $conn-> real_escape_string($_POST['newpassword']): "";
+        $newpassword = isset($_POST['newpassword']) ? $conn-> real_escape_string(password_hash($_POST['newpassword'],PASSWORD_DEFAULT)): "";
         
         if(isset($_POST["CreateAccount"])){
             if($fileUploaded){    

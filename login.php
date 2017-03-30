@@ -67,7 +67,7 @@
                     $checkLoginUsername = $row["username"];
                     $checkLoginPassword = $row["password"];
                 
-                    if(($loginusername === $checkLoginUsername) && $loginpassword == $checkLoginPassword){
+                    if(($loginusername === $checkLoginUsername) && password_verify($loginpassword, $checkLoginPassword)){
                         session_start();
                         $_SESSION['username'] = $loginusername;
                         header('Location: menu.php');
