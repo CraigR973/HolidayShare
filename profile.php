@@ -57,9 +57,6 @@
             <a href="share.php"><i class="fa fa-share-alt"></i><br/>Share</a> 
         </div>
 
-        
-        
-            
         <?php
         
             session_start();
@@ -80,29 +77,78 @@
             $picsql = "SELECT `ProfilePic` FROM `Members` WHERE `username` = '$memberusername' AND `ProfilePic` != 'null'";        
             $picresult = $conn ->query($picsql);
             $pic = $picresult->fetch_assoc();
-               
-            //close connection
-            $conn ->close();
             
             if($picresult->num_rows === 0){
                 echo "<center><img src='https://devweb2016.cis.strath.ac.uk/cs317c/docs/defaultProfilePicture.png' width='100' height='100' class='proPic'/></center>";
             } else {                  
                 foreach (glob("docs/profilepictures/*") as $p){
                     if($p == "docs/profilepictures/" . $pic['ProfilePic']){
-                        echo "<center><img src=\"https://devweb2016.cis.strath.ac.uk/cs317c/$p\" width='100' height='100' class='proPic'/></center>";
+                        echo "<center><img src=\"https://devweb2016.cis.strath.ac.uk/cs317c/$p\" width='100' height='100' class='proPic'/></center>"
+                                . "<br><br>";
                     }
                 }
             }
         ?>
             
+        <h1>Requests</h1><br>
+        
+        <?php
+          
+            //issue query
+            $sql = "SELECT * FROM `requests` WHERE `requestuser` = '$memberusername'";
+            $result = $conn ->query($sql);
+
+            if(!$result){
+                die("Query Failed ".$conn->error);
+            }
+
+            if($result->num_rows > 0){
+                while($row = $result->fetch_assoc()){
+
+                    $itemid = $row["itemid"];
+                    $status = $row["status"];
+                    
+                    //issue query
+                    $sql2 = "SELECT * FROM `Items` WHERE `id` = '$itemid'";
+                    $result2 = $conn ->query($sql2);
+
+                    if(!$result2){
+                        die("Query Failed ".$conn->error);
+                    }
+                    
+                        if($result2->num_rows > 0){
+                        while($row = $result2->fetch_assoc()){
+
+                        $itemname = $row["itemName"];
+
+                        }
+                        }
+                    
+
+                    echo "
+                    <div class='results'>
+                        Item Name: $itemname <br>
+                        Item ID: $itemid <br>
+                        Status: $status <br>
+                    </div>
+                    <br><br>
+                    ";
+                    
+                }
+            }
+          
+            
+            //close connection
+            $conn ->close();
+            
+        ?>
+        
         <div class="buttons">
-            <br><br><br>
+            <br>
             <a href="login.php"><input type="submit" value="Log Out" id="logout"></a>
             <br><br><br>
             <a><input type="submit" value="Delete Account" id="delete"></a>
         </div>
-            
-          
             
     </body>
 </html>
