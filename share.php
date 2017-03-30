@@ -117,9 +117,9 @@
             }
             
 
-            if (file_exists($file)) {
-                $fileUploaded = false;
-            }
+//            if (file_exists($file)) {
+//                $fileUploaded = false;
+//            }
 
 //            if ($_FILES["fileToUpload"]["size"] > 500000) {
 //                $fileUploaded = false;

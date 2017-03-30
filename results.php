@@ -94,17 +94,38 @@
                     $username = $row["username"];
                     $desc = $row["itemDescription"];
                     $id = $row["id"];
-
-                    echo "
-                    <div class='results'>
-                        Item Name: $name <br>
-                        Posted By: $username <br>
-                        Description: <br> $desc <br>
-                        <input type='radio' name='request' value='$id'> Request<br>
-                    </div>
-                    <br><br>
-                    ";
                     
+                    $picsql = "SELECT `itemImage` FROM `Items` WHERE `id` = '$id' AND `itemImage` != 'null' AND `itemImage` != ''";        
+                    $picresult = $conn ->query($picsql);
+                    $pic = $picresult->fetch_assoc();
+                    
+                    if($picresult->num_rows === 0){
+                        echo "
+                        <div class='results'>
+                            <img src='https://devweb2016.cis.strath.ac.uk/cs317c/docs/defaultItemImage.png' width='75' height='75' class='itemImg'/>
+                            Item Name: $name <br>
+                            Posted By: $username <br>
+                            Description: <br> $desc <br>
+                            <input type='radio' name='request' value='$id'> Request<br>  
+                        </div>
+                        <br><br>
+                        ";
+                    } else {                  
+                        foreach (glob("docs/itemimages/*") as $p){
+                            if($p == "docs/itemimages/" . $pic['itemImage']){
+                                echo "
+                                <div class='results'>
+                                    <img src='https://devweb2016.cis.strath.ac.uk/cs317c/$p' width='75' height='75' class='itemImg'/>
+                                    Item Name: $name <br>
+                                    Posted By: $username <br>
+                                    Description: <br> $desc <br>
+                                    <input type='radio' name='request' value='$id'> Request<br>
+                                </div>
+                                <br><br>
+                                ";
+                            }
+                        }
+                    }
                 }
             }
             
