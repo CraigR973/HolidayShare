@@ -46,7 +46,7 @@
         </script>
     </head>
     <body class="background">
-        <h1 id="title">Create Account</h1>
+        <h1 id="title">Register</h1>
         
             <form method="post" enctype="multipart/form-data" name="myform" onsubmit="return checkForm();">
             
@@ -55,16 +55,16 @@
                 <input type="password" name="newpassword" id="password" placeholder="Password"><br>
                 <input type="password" name="confirmpassword" id="password" placeholder="Confirm password"><br>
                 <br>
-                <label for="fileToUpload" class="uploadPic">Add a Profile Picture</label>
+                <label for="fileToUpload" class="uploadPic">Add Profile Picture</label>
                 <input type="file" name="fileToUpload" id="fileToUpload">
                 <br><br>
-                <input type="submit" value="Create Account" name="CreateAccount" id="create">
+                <input type="submit" value="Create Account" name="CreateAccount" id="buttons">
                 </p>
             
             </form>
         
-        <div class="loginbuttons">
-            <a href="welcome.php"><input type="submit" value="Back To Start Page" id="create"></a>
+        <div class="login">
+            <a href="welcome.php"><input type="submit" value="Back" id="buttons"></a>
         </div>
         
         <?php

@@ -245,6 +245,23 @@ input[type="file"] {
     float: right;
 }
 
+#map-wrapper {
+    height: calc(50% - 7rem);
+    position: relative;
+    clear: both;
+    margin-bottom: 1vw;
+}
+#map-canvas {
+    height: 100%;
+    
+    
+}
+
+#map-info {
+    line-height: 1rem;
+    font-size: 0.6rem;
+}
+
 /*ul {
     list-style-type: none;
     margin: 0;

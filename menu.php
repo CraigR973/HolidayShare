@@ -66,15 +66,63 @@
         <div class="img" style="text-align: center;">
         
             <h1>Holiday Share</h1><img src="docs/logo.png" alt="mainImage" style="width: 160px; height:100px;">
+            </div>
+            <script>
+            var x = document.getElementById("demo");
+function getLocation() {
+if (navigator.geolocation) {
+navigator.geolocation.getCurrentPosition(showPosition);
+} else {
+x.innerHTML = "Geolocation is not supported.";
+}
+}
+function showPosition(position) {
+x.innerHTML = "Latitude: " + position.coords.latitude +
+"<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+        <script>
+            var map,
+                myLatlng = new google.maps.LatLng(55.8617, -4.2417);
+            function initialize() {
+              var mapOptions = {
+                  zoom: 15,
+                  center: myLatlng
+                };
+
+                map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+//                document.getElementById("marker").addEventListener(addMarker);
+
+                google.maps.event.addListener(map, 'click', function(event) {
+                  placeMarker(event.latLng);
+                  });
+            }
+
+
+            function placeMarker(location) {
+              var marker = new google.maps.Marker({
+                position: location,
+                map: map
+              });
+            }
+            
+            google.maps.event.addDomListener(window, 'load', initialize);
+
+        </script>
+        
+         <div id="map-wrapper">
+                <div id="map-canvas"></div>
+            </div>
             
             
      
         
-        </div>
+        
         <br><br>
         <div class="buttons">
             <a href="find.php"><input type="submit" value="Find" id="buttons"></a>
-            <br><br><br>
             <a href="share.php"><input type="submit" value="Share" id="buttons"></a>
         </div>
         </div>
