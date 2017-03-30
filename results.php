@@ -118,18 +118,13 @@
         if(isset($_POST["requestbutton"])){
             
             $requestid = isset($_POST['request']) ? $conn-> real_escape_string($_POST['request']): "";
-           
-            $sql = "SELECT `username` FROM `Items` WHERE `id` = $requestid";
-            $username1 = $sql[0];
-            echo "$username1";
         
-            
-            $sql2 = "INSERT INTO `requests` (`itemid`, `postuser`, `requestuser`, `status`) VALUES  ('$requestid', '$username1','$user', 'requested')";
+            $sql2 = "INSERT INTO `requests` (`itemid`, `requestuser`, `status`) VALUES  ('$requestid','$user', 'requested')";
             
             if($conn->query($sql2) === TRUE){
-                echo"<h3>Insert Sucessful</h3>";
+                header('Location: profile.php');
             } else{
-                die("Error on insert 2".$conn->error);
+                die("Error on insert".$conn->error);
             } 
         
         }
