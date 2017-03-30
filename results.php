@@ -65,6 +65,7 @@
 
             session_start();
             $search = $_SESSION['searchterm'];
+            $user = $_SESSION['username'];
             
             //connect to database
             $servername = "devweb2016.cis.strath.ac.uk";
@@ -99,7 +100,7 @@
                         Item Name: $name <br>
                         Posted By: $username <br>
                         Description: <br> $desc <br>
-                        <input type='radio' name='request' value='request$id'> Request<br>
+                        <input type='radio' name='request' value='$id'> Request<br>
                     </div>
                     <br><br>
                     ";
@@ -109,12 +110,30 @@
             
             ?>
             
-            <input type='submit' name='request' value='request'>
+            <input type='submit' name='requestbutton' value='request'>
             </form>
         
         <?php
+             
+        if(isset($_POST["requestbutton"])){
+            
+            $requestid = isset($_POST['request']) ? $conn-> real_escape_string($_POST['request']): "";
+           
+            $sql = "SELECT `username` FROM `Items` WHERE `id` = $requestid";
+            $username1 = $sql[0];
+            echo "$username1";
         
-        //
+            
+            $sql2 = "INSERT INTO `requests` (`itemid`, `postuser`, `requestuser`, `status`) VALUES  ('$requestid', '$username1','$user', 'requested')";
+            
+            if($conn->query($sql2) === TRUE){
+                echo"<h3>Insert Sucessful</h3>";
+            } else{
+                die("Error on insert 2".$conn->error);
+            } 
+        
+        }
+
         
         ?>
         
