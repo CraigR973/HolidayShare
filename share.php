@@ -18,7 +18,7 @@
                 width: 100%;
                 background-color: #adf7f7;
                 overflow: auto;
-                position: absolute;
+                position: fixed;
                 bottom: 0;
             }
 
@@ -41,6 +41,10 @@
                 background-color: darkblue;
                
             }
+            
+            .main {
+                margin-bottom: 25vw;
+            }
         </style>
         
         
@@ -56,7 +60,7 @@
             <a href="About.php"><i class="fa fa-info"></i><br/>About</a>
             <a class="active"href="#"><i class="fa fa-share-alt"></i><br/>Share</a> 
         </div>
-      
+      <div class="main">
         <h1>Share</h1>
         <form method="post" enctype="multipart/form-data" name="myform">
             
@@ -163,6 +167,6 @@
         //
         
         ?>
-        
+      </div>
     </body>
 </html>
