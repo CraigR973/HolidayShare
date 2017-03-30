@@ -57,7 +57,9 @@
             <a href="share.php"><i class="fa fa-share-alt"></i><br/>Share</a> 
         </div>
 
-        
+        <h1>Results</h1>
+        <br><br>
+        <form method = 'post' name='result$id'>
      
             <?php
 
@@ -82,6 +84,7 @@
             if(!$result){
                 die("Query Failed ".$conn->error);
             }
+           
             
             if($result->num_rows > 0){
                 while($row = $result->fetch_assoc()){
@@ -89,14 +92,16 @@
                     $name = $row["itemName"];
                     $username = $row["username"];
                     $desc = $row["itemDescription"];
+                    $id = $row["id"];
 
                     echo "
                     <div class='results'>
                         Item Name: $name <br>
                         Posted By: $username <br>
                         Description: <br> $desc <br>
+                        <input type='radio' name='request' value='request$id'> Request<br>
                     </div>
-                    <br>
+                    <br><br>
                     ";
                     
                 }
@@ -104,7 +109,14 @@
             
             ?>
             
+            <input type='submit' name='request' value='request'>
+            </form>
         
-            
+        <?php
+        
+        //
+        
+        ?>
+        
     </body>
 </html>
