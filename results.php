@@ -99,7 +99,7 @@
                     $picresult = $conn ->query($picsql);
                     $pic = $picresult->fetch_assoc();
                     
-                    if($picresult->num_rows === 0){
+                    if($picresult->num_rows === 0 || !file_exists("docs/itemimages/" . $pic['itemImage'])){
                         echo "
                         <div class='results'>
                             <img src='https://devweb2016.cis.strath.ac.uk/cs317c/docs/defaultItemImage.png' width='75' height='75' class='itemImg'/>
