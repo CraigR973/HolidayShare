@@ -62,10 +62,11 @@
         <h1>Find</h1> 
             <br><br>
             <div class="main">
+                <p class="about"> Enter a keyword to search for items you want to borrow</p>
         <form method="post">
             <p class="login">
             
-          <input type="text" name="text" id="search" placeholder="Search...">
+          <input type="text" name="text" id="search" placeholder="Search Holiday Share">
           <br><br>
           <input type="submit" value="Search" name="Login" id="login">
           </p>
