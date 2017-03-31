@@ -17,6 +17,15 @@ h1{
     margin-top: 2vw;
 }
 
+h2{
+    margin-left: 5vw;
+    margin-right: 5vw;
+    text-align: center;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    letter-spacing: 3px;
+    color: #878e8e;
+}
+
 #title{
     text-align: center;
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
@@ -264,62 +273,3 @@ input[type="file"] {
     line-height: 1rem;
     font-size: 0.6rem;
 }
-
-/*ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #C12828;
-    color: white;
-    font-size: 24px;
-    padding-left: 20%;
-    position: absolute;
-    bottom: 0;
-
-
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-
-}
-
-li a:hover {
-    text-decoration: underline;
-
-}
-
-.icon-bar {
-    width: 100%;
-    background-color: #555;
-    overflow: auto;
-}
-
-.icon-bar a {
-    float: left;
-    width: 20%;
-    text-align: center;
-    padding: 12px 0;
-    transition: all 0.3s ease;
-    color: white;
-    font-size: 36px;
-}
-
-.icon-bar a:hover {
-    background-color: #000;
-}
-
-.active {
-    background-color: #4CAF50 !important;
-}
-
-body {margin:0;}*/
