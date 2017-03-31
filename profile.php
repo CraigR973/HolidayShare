@@ -88,7 +88,7 @@
             } else {                  
                 foreach (glob("docs/profilepictures/*") as $p){
                     if($p == "docs/profilepictures/" . $pic['ProfilePic']){
-                        echo "<div style='text-align: center;'><img src='https://devweb2016.cis.strath.ac.uk/cs317c/\$p' width='100' height='100' class='proPic'/></div>"
+                        echo "<div style='text-align: center;'><img src='https://devweb2016.cis.strath.ac.uk/cs317c/$p' width='100' height='100' class='proPic'/></div>"
                                 . "<br><br>";
                     }
                 }
