@@ -26,6 +26,15 @@ h2{
     color: white;
 }
 
+h3{
+    margin-left: 5vw;
+    margin-right: 5vw;
+    text-align: center;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    letter-spacing: 3px;
+    color: grey;
+}
+
 #title{
     text-align: center;
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
