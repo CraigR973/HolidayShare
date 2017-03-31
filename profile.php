@@ -75,7 +75,7 @@
             $conn = new mysqli($servername, $username, $password, $database);
 
 
-            if($conn ->connect_error){
+            if ($conn->connect_error) {
                 die();
             }
 
@@ -83,15 +83,14 @@
             $picresult = $conn->query($picsql);
             $pic = $picresult->fetch_assoc();
 
-            
-            if($picresult->num_rows === 0 || !file_exists("docs/profilepictures/" . $pic['ProfilePic'])){
-                echo "<div style='text-align: center;'><img src='https://devweb2016.cis.strath.ac.uk/cs317c/docs/defaultProfilePicture.png' width='100' height='100' class='proPic'/></div>";
-            } else {                  
-                foreach (glob("docs/profilepictures/*") as $p){
-                    if($p == "docs/profilepictures/" . $pic['ProfilePic']){
-                        echo "<div style='text-align: center;'><img src='https://devweb2016.cis.strath.ac.uk/cs317c/$p' width='100' height='100' class='proPic'/></div>"
-                                . "<br><br>";
 
+            if ($picresult->num_rows === 0 || !file_exists("docs/profilepictures/" . $pic['ProfilePic'])) {
+                echo "<div style='text-align: center;'><img src='https://devweb2016.cis.strath.ac.uk/cs317c/docs/defaultProfilePicture.png' width='100' height='100' class='proPic'/></div>";
+            } else {
+                foreach (glob("docs/profilepictures/*") as $p) {
+                    if ($p == "docs/profilepictures/" . $pic['ProfilePic']) {
+                        echo "<div style='text-align: center;'><img src='https://devweb2016.cis.strath.ac.uk/cs317c/$p' width='100' height='100' class='proPic'/></div>"
+                        . "<br><br>";
                     }
                 }
             }
@@ -118,7 +117,7 @@
             $result = $conn->query($sql);
 
 
-            if(!$result){
+            if (!$result) {
                 die();
             }
 
@@ -133,9 +132,8 @@
                     $result2 = $conn->query($sql2);
 
 
-                    if(!$result2){
+                    if (!$result2) {
                         die();
-
                     }
 
                     if ($result2->num_rows > 0) {
@@ -168,7 +166,7 @@
             }
 
             if ($result3->num_rows > 0) {
-                
+
                 while ($row = $result3->fetch_assoc()) {
 
                     $youritemid = $row["id"];
@@ -187,23 +185,21 @@
                         $bool = true;
                         while ($row = $result4->fetch_assoc()) {
                             $requester = $row["requestuser"];
-                        }
-                    }
+                            //issue query
+                            $sql5 = "SELECT * FROM `Members` WHERE `username` = '$requester'";
+                            $result5 = $conn->query($sql5);
 
-                    //issue query
-                    $sql5 = "SELECT * FROM `Members` WHERE `username` = '$requester'";
-                    $result5 = $conn->query($sql5);
+                            if (!$result5) {
+                                die();
+                            }
 
-                    if (!$result5) {
-                        die();
-                        
-                    }
-                    
-                    if ($result5->num_rows > 0) {
-                        
-                        while ($row = $result5->fetch_assoc()) {
-                            $useremail = $row["email"];
-                            $userphone = $row["phone"];
+                            if ($result5->num_rows > 0) {
+
+                                while ($row = $result5->fetch_assoc()) {
+                                    $useremail = $row["email"];
+                                    $userphone = $row["phone"];
+                                }
+                            }
                         }
                     }
 
