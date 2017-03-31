@@ -251,8 +251,11 @@ input[type="file"] {
     clear: both;
     margin-bottom: 1vw;
 }
-#map-canvas {
-    height: 100%;
+#map {
+     height: calc(50% - 7rem);
+    position: relative;
+    clear: both;
+    margin-bottom: 1vw;
     
     
 }

@@ -39,9 +39,9 @@
 
             .active {
                 background-color: darkblue;
-               
+
             }
-            
+
             .main {
                 margin-bottom: 25vw;
             }
@@ -54,20 +54,20 @@
             <a class="active "href="#"><i class="fa fa-home"></i><br/>Home</a>
             <a href="profile.php"><i class="fa fa-user-o"></i><br/>My HS</a>
             <a href="find.php"><i class="fa fa-search"></i><br/>Search</a>
-             
+
             <a href="About.php"><i class="fa fa-info"></i><br/>About</a>
-            <a href="share.php"><i class="fa fa-share-alt"></i><br/>Share</a> 
+            <a href="share.php"><i class="fa fa-share-alt"></i><br/>Share</a>
         </div>
 
 
 
         <div class="main">
-        
-        <div class="img" style="text-align: center;">
-        
-            <h1>Holiday Share</h1><img src="docs/logo.png" alt="mainImage" style="width: 160px; height:100px;">
+
+            <div class="img" style="text-align: center;">
+
+                <h1>Holiday Share</h1><img src="docs/logo.png" alt="mainImage" style="width: 160px; height:100px;">
             </div>
-            <script>
+<!--            <script>
             var x = document.getElementById("demo");
 function getLocation() {
 if (navigator.geolocation) {
@@ -80,54 +80,75 @@ function showPosition(position) {
 x.innerHTML = "Latitude: " + position.coords.latitude +
 "<br>Longitude: " + position.coords.longitude;
 }
-</script>
+</script>-->
 
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-        <script>
-            var map,
-                myLatlng = new google.maps.LatLng(55.8617, -4.2417);
-            function initialize() {
-              var mapOptions = {
-                  zoom: 15,
-                  center: myLatlng
-                };
+            <div id="map">
 
-                map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-//                document.getElementById("marker").addEventListener(addMarker);
-
-                google.maps.event.addListener(map, 'click', function(event) {
-                  placeMarker(event.latLng);
-                  });
-            }
-
-
-            function placeMarker(location) {
-              var marker = new google.maps.Marker({
-                position: location,
-                map: map
-              });
-            }
-            
-            google.maps.event.addDomListener(window, 'load', initialize);
-
-        </script>
-        
-         <div id="map-wrapper">
-                <div id="map-canvas"></div>
             </div>
-            
-            
-     
-        
-        
-        <br><br>
-        <div class="buttons">
-            <a href="find.php"><input type="submit" value="Find" id="buttons"></a>
-            <a href="share.php"><input type="submit" value="Share" id="buttons"></a>
-        </div>
+
+
+            <script>
+                // Note: This example requires that you consent to location sharing when
+                // prompted by your browser. If you see the error "The Geolocation service
+                // failed.", it means you probably did not give permission for the browser to
+                // locate you.
+
+                function initMap() {
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        center: {lat: -34.397, lng: 150.644},
+                        zoom: 12
+                    });
+                    var infoWindow = new google.maps.InfoWindow({map: map});
+
+                    // Try HTML5 geolocation.
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(function (position) {
+                            var pos = {
+                                lat: position.coords.latitude,
+                                lng: position.coords.longitude
+                            };
+
+                            infoWindow.setPosition(pos);
+                            infoWindow.setContent('You are here.');
+                            map.setCenter(pos);
+                        }, function () {
+                            handleLocationError(true, infoWindow, map.getCenter());
+                        });
+                    } else {
+                        // Browser doesn't support Geolocation
+                        handleLocationError(false, infoWindow, map.getCenter());
+                    }
+                }
+
+                function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                    infoWindow.setPosition(pos);
+                    infoWindow.setContent(browserHasGeolocation ?
+                            'Error: The Geolocation service failed.' :
+                            'Error: Your browser doesn\'t support geolocation.');
+                }
+            </script>
+
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9LgP6-yqZ_jKNEtD6qZc_dBj53pgyAOE&callback=initMap"></script>
+
+
+
+
+
+
+
+
+            <br><br>
+            <div class="buttons">
+                <a href="find.php"><input type="submit" value="Find" id="buttons"></a>
+                <a href="share.php"><input type="submit" value="Share" id="buttons"></a>
+            </div>
+        </div
+
+        <div class="demo">
+
         </div>
 
-       
+
 
     </body>
 </html>
