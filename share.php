@@ -65,16 +65,17 @@
         <form method="post" enctype="multipart/form-data" name="myform">
             
             <p class="login">
-                Item Name</br> <input type="text" name="name" id="username" placeholder="Name"><br><br>
-                Item Type:<br><br>
+                </br> <input type="text" name="name" id="username" placeholder="Name"><br><br>
+                <br><br>
                 <select id="type" name="type">
+                    <option value ="" selected disabled>Item Type<br>
                     <option value="Suitcase">Suitcase</option>
                     <option value="Travel Accessory">Travel Accessory</option>
                     <option value="Camping">Camping</option>
                     <option value="Pool Toys">Pool Toys</option>
                 </select>
                 <br><br>
-                Item Description:<br><br>
+                <br><br>
                 <textarea name = "desc" placeholder="Description..."></textarea>
                 <br><br>
                 <label for="fileToUpload" class="uploadPic">Add a Picture of Your Item</label>

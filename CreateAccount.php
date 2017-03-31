@@ -69,7 +69,7 @@
                 <input type="email" name="email" id="username" placeholder="Email"><br>
                 <input type="tel" name="phone" id="username" placeholder="Mobile Phone"><br>
                 <br>
-                <label for="fileToUpload" class="uploadPic">Add Profile Picture</label>
+                <label for="fileToUpload" id="buttons" style="margin-left: 5vw; margin-right: 5vw;">Add Profile Picture</label>
                 <input type="file" name="fileToUpload" id="fileToUpload">
                 <br><br>
                 <input type="submit" value="Create Account" name="CreateAccount" id="buttons">
@@ -149,6 +149,9 @@
                 $sql = "INSERT INTO `Members` ( `username`, `password`, `email`, `phone`, `location`, `ProfilePic`) VALUES  ('$newusername','$newpassword', '$email', '$phone', 'null', '$fileName')";
                 if($conn->query($sql) === TRUE){
                     echo"<h2>Account Created!</h2>";
+                    session_start();
+                        $_SESSION['username'] = $newusername;
+                        header('Location: menu.php');
                 } else{
                     die("Error on insert ".$conn->error);
                 }     
