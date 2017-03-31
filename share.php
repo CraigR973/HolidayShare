@@ -100,7 +100,7 @@
         $conn = new mysqli($servername, $username, $password, $database);
 
         if($conn ->connect_error){
-            die("Connection Failed : ".$conn->connect_error);
+            die();
         }
         
         $maxidsql = "SELECT MAX(`id`) AS 'maxid' FROM `Items`";     
@@ -158,9 +158,9 @@
             
         
         if($conn->query($sql) === TRUE){
-            echo"<h3>Insert Sucessful</h3>";
+            echo"<h2>Your Item has been successfully listed for sharing</h2>";
         } else{
-            die("Error on insert ".$conn->error);
+            die();
         } 
         
         }

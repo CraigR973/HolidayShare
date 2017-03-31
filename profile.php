@@ -76,7 +76,7 @@
             $conn = new mysqli($servername, $username, $password, $database);
 
             if($conn ->connect_error){
-                die("Connection Failed : ".$conn->connect_error);
+                die();
             }
             
             $picsql = "SELECT `ProfilePic` FROM `Members` WHERE `username` = '$memberusername' AND `ProfilePic` != 'null'";        
@@ -104,7 +104,7 @@
             $result = $conn ->query($sql);
 
             if(!$result){
-                die("Query Failed ".$conn->error);
+                die();
             }
 
             if($result->num_rows > 0){
@@ -118,7 +118,7 @@
                     $result2 = $conn ->query($sql2);
 
                     if(!$result2){
-                        die("Query Failed ".$conn->error);
+                        die();
                     }
                     
                         if($result2->num_rows > 0){
