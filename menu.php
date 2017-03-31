@@ -65,7 +65,7 @@
 
             <div class="img" style="text-align: center;">
 
-                <h1>Holiday Share</h1><img src="docs/logo.png" alt="mainImage" style="width: 160px; height:100px;">
+                <img src="docs/logo.png" alt="mainImage" style="width: 160px; height:100px;">
             </div>
 <!--            <script>
             var x = document.getElementById("demo");
@@ -95,7 +95,7 @@ x.innerHTML = "Latitude: " + position.coords.latitude +
 
                 function initMap() {
                     var map = new google.maps.Map(document.getElementById('map'), {
-                        center: {lat: -34.397, lng: 150.644},
+                        center: {lat: 51.5074, lng: -0.1278},
                         zoom: 12
                     });
                     var infoWindow = new google.maps.InfoWindow({map: map});

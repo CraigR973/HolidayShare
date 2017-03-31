@@ -48,7 +48,7 @@
     <body class="background">
         <h1 id="title">Register</h1>
         
-            <form method="post" enctype="multipart/form-data" name="myform" onsubmit="return checkForm();">
+        <form method="post" enctype="multipart/form-data" name="myform" onsubmit="return checkForm();">
             
                 <p class="login">
                 <input type="text" name="newusername" id="username" placeholder="Username"><br>
@@ -139,6 +139,9 @@
                 $sql = "INSERT INTO `Members` ( `username`, `password`, `location`, `ProfilePic`) VALUES  ('$newusername','$newpassword', 'null', 'null')";
                 if($conn->query($sql) === TRUE){
                     echo"<h2>Account Created!</h2>";
+                    session_start();
+                        $_SESSION['username'] = $newusername;
+                        header('Location: menu.php');
                 } else{
                     die("Error on insert ".$conn->error);
                 } 
