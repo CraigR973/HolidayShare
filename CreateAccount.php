@@ -149,7 +149,7 @@
             if($fileUploaded){    
                 $sql = "INSERT INTO `Members` ( `username`, `password`, `email`, `phone`, `location`, `ProfilePic`) VALUES  ('$newusername','$newpassword', '$email', '$phone', 'null', '$fileName')";
                 if($conn->query($sql) === TRUE){
-                    echo"<h2>Success your account was created! Please click login to sign in with your new detaisl</h2>";
+                    echo"<h2>Your account was successfully created! Please click login to sign in with your new details</h2>";
                     
                 } else{
                     die();
@@ -157,7 +157,7 @@
             } else {
                 $sql = "INSERT INTO `Members` ( `username`, `password`, `email`, `phone`, `location`, `ProfilePic`) VALUES  ('$newusername','$newpassword', '$email', '$phone',  'null', 'null')";
                 if($conn->query($sql) === TRUE){
-                    echo"<h2>Success your account was created! Please click login to sign in with your new detaisl</h2>";
+                    echo"<h2>Success your account was successfully created! Please click login to sign in with your new details</h2>";
                     
                 } else{
                     die();
