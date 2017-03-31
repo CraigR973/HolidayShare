@@ -97,6 +97,19 @@
             }
             ?>
 
+            <h1>Your Details</h1><br>
+
+            <?php
+                $details_result = $conn->query("SELECT `email`, `phone` FROM `Members` WHERE `username` = '$memberusername'");
+                $details = $details_result->fetch_assoc();
+                $email = $details['email'];
+                $phone = $details['phone'];
+
+                echo "Email address: ".$email;
+                echo "<br/>";
+                echo "Phone Number: ".$phone;
+            ?>
+
             <h1>Your Requests</h1><br>
 
             <?php
