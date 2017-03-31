@@ -104,9 +104,9 @@
                 $email = $details['email'];
                 $phone = $details['phone'];
 
-                echo "Email address: ".$email;
+                echo "<h3>Email address: $email</h3>";
                 echo "<br/>";
-                echo "Phone Number: ".$phone;
+                echo "<h3>Phone Number: $phone</h3>";
             ?>
 
             <h1>Your Requests</h1><br>
