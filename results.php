@@ -79,7 +79,7 @@
             $conn = new mysqli($servername, $username, $password, $database);
 
             if($conn ->connect_error){
-                die("Connection Failed : ".$conn->connect_error);
+                die();
             }
 
             //issue query
@@ -87,7 +87,7 @@
             $result = $conn ->query($sql);
 
             if(!$result){
-                die("Query Failed ".$conn->error);
+                die();
             }
            
             
@@ -151,7 +151,7 @@
             if($conn->query($sql2) === TRUE){
                 header('Location: profile.php');
             } else{
-                die("Error on insert".$conn->error);
+                die();
             } 
         
         }

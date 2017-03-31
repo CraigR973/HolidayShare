@@ -45,7 +45,7 @@
             $conn = new mysqli($servername, $username, $password, $database);
 
             if($conn ->connect_error){
-                die("Connection Failed : ".$conn->connect_error);
+                die();
             }
             
             $loginusername = isset($_POST['username']) ? $conn-> real_escape_string($_POST['username']): "";
@@ -58,7 +58,7 @@
             if(isset($_POST["Login"])){
             //handle results
             if(!$result){
-                die("Query Failed ".$conn->error);
+                die();
             }
             
             else if($result->num_rows > 0){

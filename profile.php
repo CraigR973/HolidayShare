@@ -74,21 +74,24 @@
             $database = "cs312r";
             $conn = new mysqli($servername, $username, $password, $database);
 
-            if ($conn->connect_error) {
-                die("Connection Failed : " . $conn->connect_error);
+
+            if($conn ->connect_error){
+                die();
             }
 
             $picsql = "SELECT `ProfilePic` FROM `Members` WHERE `username` = '$memberusername' AND `ProfilePic` != 'null'";
             $picresult = $conn->query($picsql);
             $pic = $picresult->fetch_assoc();
 
-            if ($picresult->num_rows === 0 || !file_exists("docs/profilepictures/" . $pic['ProfilePic'])) {
-                echo "<center><img src='https://devweb2016.cis.strath.ac.uk/cs317c/docs/defaultProfilePicture.png' width='100' height='100' class='proPic'/></center>";
-            } else {
-                foreach (glob("docs/profilepictures/*") as $p) {
-                    if ($p == "docs/profilepictures/" . $pic['ProfilePic']) {
-                        echo "<center><img src=\"https://devweb2016.cis.strath.ac.uk/cs317c/$p\" width='100' height='100' class='proPic'/></center>"
-                        . "<br><br>";
+            
+            if($picresult->num_rows === 0 || !file_exists("docs/profilepictures/" . $pic['ProfilePic'])){
+                echo "<div style='text-align: center;'><img src='https://devweb2016.cis.strath.ac.uk/cs317c/docs/defaultProfilePicture.png' width='100' height='100' class='proPic'/></div>";
+            } else {                  
+                foreach (glob("docs/profilepictures/*") as $p){
+                    if($p == "docs/profilepictures/" . $pic['ProfilePic']){
+                        echo "<div style='text-align: center;'><img src='https://devweb2016.cis.strath.ac.uk/cs317c/$p' width='100' height='100' class='proPic'/></div>"
+                                . "<br><br>";
+
                     }
                 }
             }
@@ -101,8 +104,9 @@
             $sql = "SELECT * FROM `requests` WHERE `requestuser` = '$memberusername'";
             $result = $conn->query($sql);
 
-            if (!$result) {
-                die("Query Failed " . $conn->error);
+
+            if(!$result){
+                die();
             }
 
             if ($result->num_rows > 0) {
@@ -115,8 +119,10 @@
                     $sql2 = "SELECT * FROM `Items` WHERE `id` = '$itemid'";
                     $result2 = $conn->query($sql2);
 
-                    if (!$result2) {
-                        die("Query Failed " . $conn->error);
+
+                    if(!$result2){
+                        die();
+
                     }
 
                     if ($result2->num_rows > 0) {
