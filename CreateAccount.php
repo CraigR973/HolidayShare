@@ -78,6 +78,7 @@
             </form>
         
         <div class="login">
+            <a href="login.php"><input type="submit" value="Login" id="buttons"></a>
             <a href="welcome.php"><input type="submit" value="Back" id="buttons"></a>
         </div>
         
@@ -93,7 +94,7 @@
         $conn = new mysqli($servername, $username, $password, $database);
         
         if($conn ->connect_error){
-            die("Connection Failed : ".$conn->connect_error);
+            die();
         }
 
             if(isset($_POST["CreateAccount"])) {
@@ -148,22 +149,18 @@
             if($fileUploaded){    
                 $sql = "INSERT INTO `Members` ( `username`, `password`, `email`, `phone`, `location`, `ProfilePic`) VALUES  ('$newusername','$newpassword', '$email', '$phone', 'null', '$fileName')";
                 if($conn->query($sql) === TRUE){
-                    echo"<h2>Account Created!</h2>";
-                    session_start();
-                        $_SESSION['username'] = $newusername;
-                        header('Location: menu.php');
+                    echo"<h2>Success your account was created! Please click login to sign in with your new detaisl</h2>";
+                    
                 } else{
-                    die("Error on insert ".$conn->error);
+                    die();
                 }     
             } else {
                 $sql = "INSERT INTO `Members` ( `username`, `password`, `email`, `phone`, `location`, `ProfilePic`) VALUES  ('$newusername','$newpassword', '$email', '$phone',  'null', 'null')";
                 if($conn->query($sql) === TRUE){
-                    echo"<h2>Account Created!</h2>";
-                    session_start();
-                        $_SESSION['username'] = $newusername;
-                        header('Location: menu.php');
+                    echo"<h2>Success your account was created! Please click login to sign in with your new detaisl</h2>";
+                    
                 } else{
-                    die("Error on insert ".$conn->error);
+                    die();
                 } 
             }        
         }
