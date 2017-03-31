@@ -66,6 +66,7 @@
             <div class="img" style="text-align: center;">
 
                 <img src="docs/logo.png" alt="mainImage" style="width: 160px; height:100px;">
+                <p class="about"> Find and share holiday items near you</p>
             </div>
 <!--            <script>
             var x = document.getElementById("demo");

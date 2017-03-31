@@ -158,7 +158,7 @@
             
         
         if($conn->query($sql) === TRUE){
-            echo"<h3>Your Item has been successfully listed for sharing</h3>";
+            echo"<h3>Your item has been successfully listed for sharing</h3>";
         } else{
             die();
         } 
